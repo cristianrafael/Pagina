@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Practica 1</title>
+
+		<!-- Google font -->
+		<link href="https://fonts.googleapis.com/css?family=Lato:700%7CMontserrat:400,600" rel="stylesheet">
+
+		<!-- Bootstrap -->
+		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+
+		<!-- Font Awesome Icon -->
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+
+		<!-- Custom stlylesheet -->
+		<link type="text/css" rel="stylesheet" href="css/style.css"/>
+
+    </head>
+	<body>
+
+		<!-- Header -->
+		<header id="header">
+			<div class="container">
+
+				<div class="navbar-header">
+					<!-- Logo -->
+					<div class="navbar-brand">
+						<a class="logo" href="index.html">
+							<img src="./img/logo.png" alt="logo">
+						</a>
+					</div>
+					<!-- /Logo -->
+
+					<!-- Mobile toggle -->
+					<button class="navbar-toggle">
+						<span></span>
+					</button>
+					<!-- /Mobile toggle -->
+				</div>
+
+				<!-- Navigation -->
+				<nav id="nav">
+					<ul class="main-menu nav navbar-nav navbar-right">
+						<li><a href="practicas.html">Practicas</a></li>
+						<li><a href="acercade.html">Acerca de</a></li>
+						<li><a href="contact.html">Contacto</a></li>
+					</ul>
+				</nav>
+				<!-- /Navigation -->
+
+			</div>
+		</header>
+		<!-- /Header -->
+
+		<!-- Hero-area -->
+		<div class="hero-area section">
+
+			<!-- Backgound Image -->
+			<div class="bg-image bg-parallax overlay" style="background-image:url(./img/practica_1.jpg)"></div>
+			<!-- /Backgound Image -->
+
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10 col-md-offset-1 text-center">
+						<ul class="hero-area-tree">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="practicas.html">Practicas</a></li>
+							<li>Instalación de windows y linux nativo</li>
+						</ul>
+						<h1 class="white-text">Instalación de windows y linux nativo</h1>
+						<ul class="blog-post-meta">
+							<li class="blog-meta-author">25 de Enero 2020</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!-- /Hero-area -->
+
+		<!-- Blog -->
+		<div id="blog" class="section">
+
+			<!-- container -->
+			<div class="container">
+
+				<!-- row -->
+				<div class="row">
+
+					<!-- main blog -->
+					<div id="main" class="col-md-12">
+
+						<!-- blog post -->
+						<div class="blog-post" style="text-align: justify;">
+							<p>Como parte de la primera practica vamos a instalar los sistemas operativos de windows y linux de manera nativa, osea sin utilizar maquinas virtuales. Procederemos a instalar las versiones de Windows 7 y la distribucion Linux Mint, debido a que la computadora donde se hará la instalación de manera nativa es bastante vieja, por lo cual no considero recomendable instalar la version de windows 10.</p>
+							<br>
+							<div class="col-12 text-center">
+								<h3>Parte 1: Imagenes ISO </h3>
+							</div>
+							<p>Lo primero a tomar en cuenta es el el tema de las licencias. Mientras que Linux Mint es gratuito, microsoft nos pedira una licencia de producto para instalar su sistema operativo, dependera de la version que instalemos si es posible probar por 30 dias.</p>
+							<p>Para descargar linux mint basta con entrar al sitio: <a href="https://linuxmint.com/" target="_blank">https://linuxmint.com/</a> y descargar la version mas actualizada (preferentemente) considerando la arquitectura de nuestro procesador, en mi caso utilizaré la version de 64 bits, ademas de elegir la interfaz de escritorio Cinnamon, con un peso aproximado de 2 GB.</p>
+
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/1/1.jpg" width="70%">
+							</div>
+							<br>
+
+							<p>Para poder instalar el sistema operativo debemos quemar la imagen iso en un CD o utilizar una memoria USB como gestor de arranque, para esto ultimo tenemos que descargar un programa que nos ayude con la preparación de la memoria.</p>
+							<p>Existen multiples pogramas para realizar esta operacion, pero yo usaré Linux live USB Creator descargandolo del siguiente enlace <a href="https://www.linuxliveusb.com/" target="_blank">https://www.linuxliveusb.com/</a><p>
+
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/1/2.jpg" width="70%">
+							</div>
+							<br>
+							<p>La interfaz del programa nos permite seleccionar una unidad de almacenamiento y una imagen iso, ya sea descargada, insertar un cd o descargarla desde el mismo programa. Logicamente debemos de utilizar una memoria con mas capacidad que el peso de la imagen. Entonces una vez seleccionado todo simplemente creamos la unidad arrancable.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/1/3.jpg" width="200px">
+							</div>
+							<br>
+							<p>En el caso de windows 7, descargaremos el iso de la siguiente pagina <a href="https://www.microsoft.com/es-mx/software-download/windows7" target="_blank">https://www.microsoft.com/es-mx/software-download/windows7</a> y repetimos el proceso de creacion de la usb.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/1/4.jpg" width="70%">
+							</div>
+							<br>
+							<p>Por cuestiones practicas usaré el CD Original de instalación de 64 bits de la version Home Premium en lugar de crear la unidad arrancable usb.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/1/5.jpg" width="50%">
+							</div>
+							<br>
+							<p>Resuelto el problema de las imagenes, ahora tenemos que analizar el tema de las particiones. Lo primero es identificar la capacidad de nuestro disco duro y el espacio que le asignaremos a cada sistema operativo, si lo que deseas es instalar un sistema operativo en discos distintos entonces no tendras que preocuparte por el tema de las particiones.</p>
+							<p>En mi caso tengo un HDD de 500GB el cual voy a particionar para instalar ambos sistemas operativos en el. La idea es principalmente tener un selector o grub que nos permita escoger el sistema operativo cada que encendamos la computadora.</p>
+							<br>
+							<div class="col-12 text-center">
+								<h3>Parte 2: Instalación Windows 7 </h3>
+							</div>
+							<br>
+							<p>Vamos a comenzar por instalar primero windows 7, para eso pondremos la usb o en mi caso el CD, en la computadora antes de encenderla.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/1/6.jpg" width="50%">
+							</div>
+							<br>
+							<p>Al encender la computadora entraremos en la configuración del BIOS para modificar el orden de arranque, con esto colocaremos la opcion escogida ya sea USB o CD como prioridad. Guardamos la configuración y reiniciamos nuevamente el equipo.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/1/7.jpg" width="50%">
+							</div>
+							<br>
+							<p>Al iniciar el equipo, la usb o el CD iniciara el asistente de instalación de windows 7. Pasaremos a seleccionar el idioma, la distribución del teclado y aceptaremos los terminos y condiciones.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/1/8.jpg" width="50%">
+							</div>
+							<br>
+							<p>Ahora vamos a realizar las particiones. Al inicio contamos con 465BG disponibles sin particionar.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/1/9.jpg" width="50%">
+							</div>
+							<br>
+							<p>La primera particion será donde se instalará los archivos del sistema de windows el que originalmente se reconoce como unidad C por default. Esta partición la crearé de 100GB, aunque solo necesitemos 35GB aproximadamente para instalar el S.O. </p>
+							<p>Al crear la particion, el asistente hará particiones adicionales para instalar los archivos de arranque. Segun la informacion brindada por microsfot la particion de tipo MSR almacena archivos para iniciar el modo seguro y restauacion de arranque. Mientras que la otra particion almacena los archivos de arranque.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/1/10.jpg" width="50%">
+							</div>
+							<br>
+							<p>Hasta este punto, tenemos 3 particiones. Adicionalmente crearemos otra particion de 100GB para almacenar archivos personales de windows utilizandolo como unidad D.</p>
+							<p>Al final nos quedaran aproximadamente 4 particiones y el espacio no particionado restante.</p>
+							<p>En la siguiente imagen enlistamos las particiones. Las dos primeras son creadas automaticamente, la tercera y cuarta (99.8 y 100 GB's) son las que nosotros creamos.</p>
+							<p>Por orden del sector del disco es conveniente instalar el S.O. en la tercera particion, por si queremos extender el espacio a esa particion y reducir el de la cuarta.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/1/11.jpg" width="50%">
+							</div>
+							<br>
+							<p>Despues de seleccionar la partición empezara la instalación</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/1/12.jpg" width="50%">
+							</div>
+							<br>
+							<p>La instalación hara que el equipo se reinicie varias veces, y debemos tener cuidado de ya no arrancar la USB o CD nuevamente.</p>
+							<p>Al terminar la instalación tendremos que configurar algunas opcione iniciales. Por ejemplo el nombre de la pc, la red inalambrica, las actualizaciones entre otras.
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/1/13.jpg" width="50%">
+							</div>
+							<br>
+							<p>Cuando terminemos la configuración inicial, podremos arrancar el sistema operativo normalmente.</p>
+							<p>Una vez en windows utilizaremos la herramienta de "Administración de equipos" para ver las particiones</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/1/14.jpg" width="50%">
+							</div>
+							<br>
+							<p>Esta herramienta nos oculta por defecto la particion reservada, y nos muestra unicamente las 3 restantes. Si recordamos la particion que utilizamos para instalar es la que ahora viene marcada como unidad C. Justo a esa particion nos aparece la otra de 100 GB que creamos, en mi caso la voy a formatear en NTFS para utilizarla. Y con esto habremos terminado la instalación de windows</p>
+							<p>Aconsejo también colocar etiquetas en las unidades para identificar las particiones mas facilmente en linux o cualquier otro S.O.</p>
+							<br>
+							<div class="col-12 text-center">
+								<h3>Parte 3: Instalación Linux Mint </h3>
+							</div>
+							<br>
+							<p>Como ya tenemos windows instaldo debemos tener que cuidado de no borrar las particiones de arranque porque podriamos quedarnos sin poder iniciar windows.</p>
+							<p>Aclarado esto, entonces insertamos ahora nuestra usb donde tenemos linux y encendemos el equipo. Nuevamente seleccionamos la usb como unidad de arranque y esperamos a que cargue.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/1/15.jpg" width="50%">
+							</div>
+							<br>
+							<p>Dependiendo de la version de linux mint que tengamos nos desplegara un menu con opciones, este menu que aparece nos permite seleccionar principalmente si queremos iniciar la version normal, o la compatible. Segun la documentación, el modo compatible utiliza los controladores basicos de algunos componentes para que no existan problemas con ello.</p>
+							<p>Como mi computadora es un poco vieja, seleccionaré la version compatible.<p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/1/16.jpg" width="50%">
+							</div>
+							<br>
+							<p>Luego de eso, podremos probar el sistema opearitvo o lo que conocemos como live cd. Cabe recalcar que los cambios a la configuracion que hagamos no se guardaran. Así que es importante entonces instalarlo para almacenarlo en nuestro disco duro.</p>
+							<p>Pero antes de realizar cualquier movimiento, utilizaremos la herramienta GParted para identificar las particiones.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/1/17.jpg" width="50%">
+							</div>
+							<br>
+							<p>Ahora que podemos identificar las particiones entonces pasemos a realizar la instalación con mayor confianza. Basta con hacer click en el icono del escritorio para comenzar.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/1/18.jpg" width="50%">
+							</div>
+							<br>
+							<p>Lo que sigue es bastante sencillo, simplemente seleccionamos el idioma, la distribución del teclado y nos preguntara si deseamos instalar software de terceros, ya que algunos paquetes no se encuentran directamente en el disco y es necesario descargarlos de internet.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/1/19.jpg" width="50%">
+							</div>
+							<br>
+							<p>En la siguiente ventana, el asistente nos preguntara donde queremos instalar linux mint. La opcion por defecto nos dira que lo instalará junto con Windows Boot Manager. Pero nosotros crearemos las particiones para administrar los tamaños.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/1/20.jpg" width="50%">
+							</div>
+							<br>
+							<p>Ahora nos aparecerán las particiones y el espacio del disco. Aqui lo primero que tenemos que hacer, es crear una particion para el area de intercambio o memoria swap. Esta particion nos servira para adminsitrar mejor la memoria RAM y que el S.O pueda cargar en disco parte de los procesos y no desperdiciar memoria principal.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/1/21.jpg" width="50%">
+							</div>
+							<br>
+							<p>Esta partición la vamos a crear del tamaño de nuestra RAM, a partir del espacio no particionado del disco.</p>
+							<p>De las opciones que nos da el asistente escogemos particion logica y le indicamos que la vamos a utilizar como area de intercambio.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/1/22.jpg" width="50%">
+							</div>
+							<br>
+							<p>Por ultimo creamos una particion con el espacio restante y en utilizar como lo dejamos por defecto en sistema de ficheros ext4 transaccional. Tambien, en el punto de montaje seleccionamos la rais del disco.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/1/23.jpg" width="50%">
+							</div>
+							<br>
+							<p>Una vez tengamos las pariticones listas iniciamos la instalación, pero antes nos pedira seleccionar el huso horario y escribir el nombre del equipo y su contraseña.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/1/24.jpg" width="50%">
+							</div>
+							<br>
+							<p>Una vez terminados los ajustes comenzará la instalacion de linux mint</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/1/25.jpg" width="50%">
+							</div>
+							<br>
+							<p>Cuando la instalación termine, reiniciamos el equipo.</p>
+
+							<br>
+							<div class="col-12 text-center">
+								<h3>Parte 4: Resultados</h3>
+							</div>
+							<br>
+							<p>Al iniciar la computadora debemos quitar la usb o disco de instalacion para que se ejecute el grub de linux. De preferencia recomiendo modificar nuevamente la prioridad de arranque desde el bios para seleccionar el sistema de arranque del disco duro en lugar de la usb o cd que habiamos configurado con anterioridad. Esto con el fin de que nuestra computadora cargue siempre el sistema operativo, para que en el caso de que olvidemos desconectar una usb, o retirar algun disco el arranque no se quede colgado.</p>
+							<p>Si todo sale bien, el sistema nos debe mostrar el selector de arranque para cargar nuestros sistemas operativos desde el mismo disco duro.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/1/26.jpg" width="50%">
+							</div>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/1/27.jpg" width="50%">
+							</div>
+							<br>
+
+							<div class="col-12 text-center">
+								<h3>Caracteristicas de Windows 7 </h3>
+							</div>
+							<br>
+							<p>1. Windows 7 es la penúltima versión de este sistema operativo, saliendo a la venta en el año 2009.</p>
+							<p>2. Entre sus características más llamativas podemos mencionar el rediseño gráfico que sufrió según sus antecesores, así como las nuevas opciones que incorpora. Asimismo, Windows 7 presenta mejoras en el rendimiento general del sistema operativo.</p>
+							<p>3. Windows 7 pretendió ser mucho más intuitivo que su antecesor, Windows Vista, el cual recibió múltiples críticas provenientes de diversos sectores.</p>
+							<p>4. Originalmente, Windows 7 fue creado como una extensión o actualización focalizada de su antecesor Vista. No obstante, a diferencia de este último, aquel mejoró su interfaz manteniendo el núcelo NT 6.0.</p>
+							<p>5. Una de las grandes características de Windows 7 es que permite personalizar completamente el equipo a través de temas ampliamente configurables al gusto del usuario.</p>
+							<p>6. Otros cambios de esta versión se hicieron en: la calculadora, la barra lateral, el reproductor, el aero peek, el aero shake y las utilidades en 3D.</p>
+							<p>7. Windows 7 también incorpora el anytime upgrade, el cual ya venía incluido con la versión anterior. Esto permite actualizar el programa de manera simple y rápida. </p>
+							<p>8. La versión 7 de Windows eliminó algunos programas como Windows Mail, Movie Maker y Photo Gallery. Todos estos recursos se podían descargar en línea y configurarlos para usarlo con Windows.</p>
+							<p>9. Una de las críticas más duras hacia este programa informático fue la que realizó la Fundación para el Software Libre, la cual dijo que Windows 7 representaba una seria amenza contra los derechos de los usuarios.</p>
+							<br>
+							<div class="col-12 text-center">
+								<h3>Caracteristicas de Linux Mint </h3>
+							</div>
+							<br>
+							<p>Linux Mint utiliza principalmente software libre y de código abierto, haciendo excepciones para algunos programas propietarios, como complementos y códecs que proporcionan reproducción de Adobe Flash, MP3 y DVD. La inclusión de Linux Mint de software propietario es inusual; muchas distribuciones de Linux no incluyen software propietario por defecto, ya que un objetivo común para algunas distribuciones de Linux es adherirse al modelo de software libre y de código abierto.</p>
+							<p>Linux Mint viene con una amplia gama de software instalado que incluye LibreOffice, Firefox, Thunderbird, HexChat, Pidgin, Transmission, VLC media player y GIMP. El software adicional que no está instalado por defecto se puede descargar usando el administrador de paquetes. Linux Mint permite que los puertos de red se cierren utilizando su firewall, con una selección de puertos personalizada disponible. Los entornos de escritorio de Linux Mint predeterminados, Cinnamon y MATE, admiten muchos idiomas. Linux Mint también puede ejecutar muchos programas diseñados para Microsoft Windows (como Microsoft Office), usando el software de capa de compatibilidad de Wine Windows para Linux, o software de virtualización, incluyendo VMware Workstation y VirtualBox, o KVM (Máquina Virtual basada en Kernel, integrada en Linux kernel) hipervisor utilizando Virtual Machine Manager.</p>
+							<p>Linux Mint está disponible con varios entornos de escritorio para elegir, incluyendo el escritorio Cinnamon predeterminado, MATE, KDE y Xfce. Otros entornos de escritorio pueden instalarse a través de APT, Synaptic o del administrador de software Mint personalizado.</p>
+							<p>Linux Mint desarrolla activamente software para su sistema operativo. La mayor parte del desarrollo se realiza en Python y el código fuente está disponible en GitHub.</p>
+						</div>
+						<!-- /blog post -->
+
+
+					</div>
+					<!-- /main blog -->
+
+				</div>
+				<!-- row -->
+
+			</div>
+			<!-- container -->
+
+		</div>
+		<!-- /Blog -->
+
+		<!-- Footer -->
+		<footer id="footer" class="section">
+
+			<!-- container -->
+			<div class="container">
+
+				<!-- row -->
+				<div class="row">
+
+					<!-- footer logo -->
+					<div class="col-md-6">
+						<div class="footer-logo">
+							<a class="logo" href="index.html">
+								<img src="./img/logo.png" alt="logo">
+							</a>
+						</div>
+					</div>
+					<!-- footer logo -->
+
+					<!-- footer nav -->
+					<div class="col-md-6">
+						<ul class="footer-nav">
+							<li><a href="practicas.html">Practicas</a></li>
+							<li><a href="acercade.html">Acerca de</a></li>
+							<li><a href="contact.html">Contacto</a></li>
+						</ul>
+					</div>
+					<!-- /footer nav -->
+
+				</div>
+				<!-- /row -->
+
+				<!-- row -->
+				<div id="bottom-footer" class="row">
+
+					<!-- social -->
+					<div class="col-md-4 col-md-push-8">
+						<ul class="footer-social">
+							<li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a></li>
+							<li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li>
+							<li><a href="#" class="youtube"><i class="fa fa-youtube"></i></a></li>
+							<li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+						</ul>
+					</div>
+					<!-- /social -->
+
+					<!-- copyright -->
+					<div class="col-md-8 col-md-pull-4">
+						<div class="footer-copyright">
+							<span>&copy; Copyright 2020. Esta pagina fue creada solo con fines educativos</a></span>
+						</div>
+					</div>
+					<!-- /copyright -->
+
+				</div>
+				<!-- row -->
+
+			</div>
+			<!-- /container -->
+
+		</footer>
+		<!-- /Footer -->
+
+		<!-- preloader -->
+		<div id='preloader'><div class='preloader'></div></div>
+		<!-- /preloader -->
+
+
+		<!-- jQuery Plugins -->
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+
+	</body>
+</html>
