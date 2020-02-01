@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Practica 1</title>
+		<title>Practica 2</title>
 
 		<!-- Google font -->
 		<link href="https://fonts.googleapis.com/css?family=Lato:700%7CMontserrat:400,600" rel="stylesheet">
@@ -59,7 +59,7 @@
 		<div class="hero-area section">
 
 			<!-- Backgound Image -->
-			<div class="bg-image bg-parallax overlay" style="background-image:url(./img/practica_1.jpg)"></div>
+			<div class="bg-image bg-parallax overlay" style="background-image:url(./img/practica_2.jpg)"></div>
 			<!-- /Backgound Image -->
 
 			<div class="container">
@@ -68,11 +68,11 @@
 						<ul class="hero-area-tree">
 							<li><a href="index.html">Home</a></li>
 							<li><a href="practicas.html">Practicas</a></li>
-							<li>Instalación de windows y linux nativo</li>
+							<li>Programa para ver los servicios</li>
 						</ul>
-						<h1 class="white-text">Instalación de windows y linux nativo</h1>
+						<h1 class="white-text">Programa para ver los servicios de windows y linux</h1>
 						<ul class="blog-post-meta">
-							<li class="blog-meta-author">25 de Enero 2020</li>
+							<li class="blog-meta-author">01 de Febrero 2020</li>
 						</ul>
 					</div>
 				</div>
@@ -95,15 +95,54 @@
 
 						<!-- blog post -->
 						<div class="blog-post">
-							<p>An aeterno percipit per. His minim maiestatis consetetur et, brute tantas iracundia id sea. Vim tota nostrum reformidans te. Nam ad appareat mediocritatem, mediocrem similique usu ex, scaevola invidunt eu sed.</p>
-							<p>Reque admodum praesent ei nec. Ad eius phaedrum conclusionemque cum, pri cu suas essent saperet. No vero ludus habemus qui. Per ex errem torquatos, eam in tale sumo mentitum. Cum nulla viderer no. Pri id antiopam volutpat evertitur, in vidit interpretaris nec.</p>
-							<p>Te option apeirian corrumpit nec, has et tollit minimum molestie. Nam et justo everti, tale repudiandae cu nec. Aliquip legendos evertitur ne sit, mazim sadipscing sea ei. Sea no facete probatus vulputate, ex pri reque tempor. Odio adolescens ius te, docendi suscipit indoctum at qui.</p>
-							<blockquote>
-							  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-							</blockquote>
-							<p>An aeterno percipit per. His minim maiestatis consetetur et, brute tantas iracundia id sea. Vim tota nostrum reformidans te. Nam ad appareat mediocritatem, mediocrem similique usu ex, scaevola invidunt eu sed.</p>
-							<p>Reque admodum praesent ei nec. Ad eius phaedrum conclusionemque cum, pri cu suas essent saperet. No vero ludus habemus qui. Per ex errem torquatos, eam in tale sumo mentitum. Cum nulla viderer no. Pri id antiopam volutpat evertitur, in vidit interpretaris nec.</p>
-							<p>Te option apeirian corrumpit nec, has et tollit minimum molestie. Nam et justo everti, tale repudiandae cu nec. Aliquip legendos evertitur ne sit, mazim sadipscing sea ei. Sea no facete probatus vulputate, ex pri reque tempor. Odio adolescens ius te, docendi suscipit indoctum at qui.</p>
+							<p>El programa que se desarrolló es una implementacion de los comandos de windows y linux dentro de un programa en c. El objetivo de esto es conocer los servicios que se ejecutan en nuestros sistemas operativos y escribir un programa que nos ayude a mostrarlos sin importar la plataforma.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/2/1.png" width="50%">
+							</div>
+							<br>
+							<br>
+							<div class="col-12 text-center">
+								<h3>Ejecutando el programa en Linux</h3>
+							</div>
+							<br>
+							<p>Para compilar y ejecutar nuestro programa debemos de descargar el compilador gcc y el build essential con el comando:</p><p><b>"sudo apt-get install gccclear build-essential".</b></p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/2/2.png" width="50%">
+							</div>
+							<br>
+							<p>Una vez descargado el compilador, abrimos la consola donde se encuentre el codigo y utilizamos el siguiente comando</p>
+							<p><b>"gcc programa.c -o ejectuable"</b></p>
+							<p>Y para ejecutar el programa creado utilizamos:</p>
+							<p><b>"./ejecutable"</b></p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/2/3.png" width="50%">
+							</div>
+							<br>
+							<p>Donde las marcas con "+" son los servicios ejecutandose, los servicios con "-" son los que estan detenidos, mientras que los que tienen "?" son servicios sin un comando de estatus.</p>
+							<br>
+							<div class="col-12 text-center">
+								<h3>Ejecutando el programa en Windows</h3>
+							</div>
+							<br>
+							<p>En el caso de windows, para compilar el programa necesitamos instalar el instalador de MINGW que implementa el compilador de c/c++. El cual descargamos de la siguiente pagina <a href="https://osdn.net/projects/mingw/releases/" target="_blank" style="color: blue">https://osdn.net/projects/mingw/releases/</a></p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/2/4.png" width="50%">
+							</div>
+							<br>
+							<p>Cuando descarguemos e instalemos el compilador, el asistente añadira el compilador gcc y g++ a las variables del entorno. Entonces repetimos el proceso de compilacion de linux.</p>
+							<p><b>"gcc programa.c -o ejecutable"</b></p>
+							<p>Y para ejecutar el programa creado utilizamos:</p>
+							<p><b>"ejecutable.exe"</b></p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/2/5.png" width="50%">
+							</div>
+							<br>
+							<p>Al ejecutar programa nos mostrará los servcios activos de nuestra computadora.</p>
 						</div>
 						<!-- /blog post -->
 

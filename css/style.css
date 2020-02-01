@@ -35,7 +35,7 @@ body {
     font-family: 'Montserrat', sans-serif;
 	font-size: 15px;
     font-weight: 400;
-    color: #798696;
+    /*color: #798696;*/
 	overflow-x:hidden;
 }
 
@@ -561,10 +561,11 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	margin-bottom:20px;
 	border-radius:4px;
 	overflow:hidden;
+	height: 200px;
 }
 
 .course .course-img > img {
-	width:100%;
+	height: 100%;
 }
 
 .course-img:after {
@@ -807,10 +808,11 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 	display:block;
 	border-radius:4px;
 	overflow:hidden;
+	height: 200px;
 }
 
 .single-blog .blog-img img {
-	width:100%;
+	height: 100%;
 }
 
 .single-blog .blog-img > a:after {
