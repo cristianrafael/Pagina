@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Practica 3</title>
+
+		<!-- Google font -->
+		<link href="https://fonts.googleapis.com/css?family=Lato:700%7CMontserrat:400,600" rel="stylesheet">
+
+		<!-- Bootstrap -->
+		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+
+		<!-- Font Awesome Icon -->
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+
+		<!-- Custom stlylesheet -->
+		<link type="text/css" rel="stylesheet" href="css/style.css"/>
+
+    </head>
+	<body>
+
+		<!-- Header -->
+		<header id="header">
+			<div class="container">
+
+				<div class="navbar-header">
+					<!-- Logo -->
+					<div class="navbar-brand">
+						<a class="logo" href="index.html">
+							<img src="./img/logo.png" alt="logo">
+						</a>
+					</div>
+					<!-- /Logo -->
+
+					<!-- Mobile toggle -->
+					<button class="navbar-toggle">
+						<span></span>
+					</button>
+					<!-- /Mobile toggle -->
+				</div>
+
+				<!-- Navigation -->
+				<nav id="nav">
+					<ul class="main-menu nav navbar-nav navbar-right">
+						<li><a href="practicas.html">Practicas</a></li>
+						<li><a href="acercade.html">Acerca de</a></li>
+						<li><a href="contact.html">Contacto</a></li>
+					</ul>
+				</nav>
+				<!-- /Navigation -->
+
+			</div>
+		</header>
+		<!-- /Header -->
+
+		<!-- Hero-area -->
+		<div class="hero-area section">
+
+			<!-- Backgound Image -->
+			<div class="bg-image bg-parallax overlay" style="background-image:url(./img/practica_3.jpg)"></div>
+			<!-- /Backgound Image -->
+
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10 col-md-offset-1 text-center">
+						<ul class="hero-area-tree">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="practicas.html">Practicas</a></li>
+							<li>Instalación de libre office</li>
+						</ul>
+						<h1 class="white-text">Instalación de libre office en windows y linux</h1>
+						<ul class="blog-post-meta">
+							<li class="blog-meta-author">08 de Febrero 2020</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!-- /Hero-area -->
+
+		<!-- Blog -->
+		<div id="blog" class="section">
+
+			<!-- container -->
+			<div class="container">
+
+				<!-- row -->
+				<div class="row">
+
+					<!-- main blog -->
+					<div id="main" class="col-md-12">
+
+						<!-- blog post -->
+						<div class="blog-post">
+							<p>Libre office es una paqueteria de diferentes programas para oficina que se encuentra de forma gratuita para multiples plataformas. Para esta practica vamos a realizar la instalación tanto en linux como en windows.</p>
+							<br>
+							<div class="col-12 text-center">
+								<h3>Descarga e instalación en Windows 7</h3>
+							</div>
+							<br>
+							<p>Para la version de windows debemos contar por lo menos con la actualizacion de Service Pack 1 de windows 7 o versiones posteriores. Cumpliendo con este requisito iremos al sitio oficial a descargar la version correspondiente a nuestra arquitectura del procesador. En mi caso es la de 64 bits. <a style="color: blue" href="https://es.libreoffice.org/descarga/libreoffice/" target="_blank">https://es.libreoffice.org/descarga/libreoffice/</a></p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/3/1.jpg" width="50%">
+							</div>
+							<br>
+							<p>Una vez descargado el instalador, lo ejecutamos y seguimos con los pasos de la instalación.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/3/2.jpg" width="50%">
+							</div>
+							<br>
+							<p>El asistente nos preguntará si queremos instalar libre office de manera tipica (Instalación completa y en el disco C por defecto) o si queremos seleccionar las aplicaciones a instalar y escoger la direccion en el disco.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/3/3.jpg" width="50%">
+							</div>
+							<br>
+							<p>Por ultimo, el asistente empezara a instalar los componentes seleccionados.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/3/4.jpg" width="50%">
+							</div>
+							<br>
+							<p>Finalmente obtendremos nuestras aplicaciones en la carpeta de inicio para ejecutarlas.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/3/5.jpg" width="50%">
+							</div>
+							<br>
+							<div class="col-12 text-center">
+								<h3>Descarga e instalación en Linux Mint</h3>
+							</div>
+							<br>
+							<p>Para realizar la instalación en linux tenemos 3 opciones. La primera seria repetir los pasos de instalacion para windows, es decir, descargar el instalador directamente de la pagina y seleccionar la version de Linux(deb).</p>
+							<p>Otra opcion seria descargar la paqueteria utilizando el gestor de software que viene con el sistema operativo, simplemente buscando el nombre del programa en la barra de busqueda e instalarla.</p>
+							<p>Por ultimo tenemos la instalación directamente desde la consola, el cual sera el metodo utilizado en este ejemplo.</p>
+							<p>Lo primero es agregar el repositorio de libre office con el comando <b>"sudo add-apt-repository ppa:libreoffice/ppa"</b></p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/3/6.png" width="50%">
+							</div>
+							<br>
+							<p>Despues utilizamos <b>"sudo apt-get update"</b> para actualizar los repositorios.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/3/7.png" width="50%">
+							</div>
+							<br>
+							<p>Con los repositorios actualizados entonces instalamos libre office con <b>"sudo apt-get install libreoffice"</b></p>
+							<p>Adicional a eso podemos descargar la traduccion en español de las paqueterias con <b>"sudo apt-get install libreoffice-l10n-es"</b></p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/3/8.png" width="50%">
+							</div>
+							<br>
+							<p>Al final de la instalación podremos abrir cualquier aplicación de la paqueteria instalada</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/3/9.png" width="50%">
+							</div>
+							<br>
+						</div>
+						<!-- /blog post -->
+
+
+					</div>
+					<!-- /main blog -->
+
+				</div>
+				<!-- row -->
+
+			</div>
+			<!-- container -->
+
+		</div>
+		<!-- /Blog -->
+
+		<!-- Footer -->
+		<footer id="footer" class="section">
+
+			<!-- container -->
+			<div class="container">
+
+				<!-- row -->
+				<div class="row">
+
+					<!-- footer logo -->
+					<div class="col-md-6">
+						<div class="footer-logo">
+							<a class="logo" href="index.html">
+								<img src="./img/logo.png" alt="logo">
+							</a>
+						</div>
+					</div>
+					<!-- footer logo -->
+
+					<!-- footer nav -->
+					<div class="col-md-6">
+						<ul class="footer-nav">
+							<li><a href="practicas.html">Practicas</a></li>
+							<li><a href="acercade.html">Acerca de</a></li>
+							<li><a href="contact.html">Contacto</a></li>
+						</ul>
+					</div>
+					<!-- /footer nav -->
+
+				</div>
+				<!-- /row -->
+
+				<!-- row -->
+				<div id="bottom-footer" class="row">
+
+					<!-- social -->
+					<div class="col-md-4 col-md-push-8">
+						<ul class="footer-social">
+							<li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a></li>
+							<li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li>
+							<li><a href="#" class="youtube"><i class="fa fa-youtube"></i></a></li>
+							<li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+						</ul>
+					</div>
+					<!-- /social -->
+
+					<!-- copyright -->
+					<div class="col-md-8 col-md-pull-4">
+						<div class="footer-copyright">
+							<span>&copy; Copyright 2020. Esta pagina fue creada solo con fines educativos</a></span>
+						</div>
+					</div>
+					<!-- /copyright -->
+
+				</div>
+				<!-- row -->
+
+			</div>
+			<!-- /container -->
+
+		</footer>
+		<!-- /Footer -->
+
+		<!-- preloader -->
+		<div id='preloader'><div class='preloader'></div></div>
+		<!-- /preloader -->
+
+
+		<!-- jQuery Plugins -->
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+
+	</body>
+</html>
