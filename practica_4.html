@@ -95,7 +95,149 @@
 
 						<!-- blog post -->
 						<div class="blog-post">
-							<p></p>
+							<p>Para realizar esta practica haremos uso de un proyecto de la materia de Seminario de Solución de Problemas de Bases de Datos que consiste en un punto de venta desarrollado en Java utilizando NetBeans como IDE.</p>
+							<p>Aclarado esto entonces, vamos a descargar Java SDK del siguiente sitio: <a style="color: blue" href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank">https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a></p>
+							<p>Segun el sistema operativo que estemos utilizando ya sea windows o linux vamos a escoger la version de la arquitectura de nuestro procesador que es de 64 bits. En el caso de windows descargamos el instalador el .exe mientras que para linux utilizamos el .tar.gz</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/4/1.jpg" width="50%">
+							</div>
+							<br>
+							<div class="col-12 text-center">
+								<h3>Descarga e instalación en Linux Mint</h3>
+							</div>
+							<br>
+							<p>Para empezar cabe aclarar que linux mint 19.02 ya cuenta con una version de java, pero nosotros instalaremos la version 8 para correr nuestra aplicación.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/4/2.jpg" width="50%">
+							</div>
+							<br>
+							<p>Entonces, para hacer esto podemos borrar completamente la version de java que viene incluida o podemos instalar nuestra version manualmente y seleccionarla como nuestra version por defecto.</p>
+							<p>Cuando descarguemos nuestro paquete Java SDK, abriremos una terminal en la carpeta de descargas.</p>
+							<p>Ahora descomprimimos el archivo y lo movemos a la carpeta "/usr/lib/jvm" con el siguiente comando:</p><br>
+							<p style="color: blue">"sudo tar xfz jdk-8u241-linux-x64.tar.gz -C /usr/lib/jvm/"</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/4/3.jpg" width="50%">
+							</div>
+							<br>
+							<p>Ahora accederemos a la carpeta /usr/lib/jvm/jdk1.8.0_241 que es la que se creo al descomprimir.</p>
+							<p>Y entonces cambiamos la configuracion de java por la nueva versión.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/4/4.jpg" width="50%">
+							</div>
+							<br>
+							<p>Despues de cambiar las variables del entorno vamos a agregar la nueva version a las alternativas de java</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/4/5.jpg" width="50%">
+							</div>
+							<br>
+							<p>Al final podremos seleccionar la version de java con la que queremos trabajar y entonces habremos terminado la instalación en linux</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/4/6.jpg" width="50%">
+							</div>
+							<br>
+							<p>A partir de este punto ya podemos compilar archivos .java y generar nuestras aplicaciones. Solo que para nuestro caso, la aplicacion que probaremos es un proyecto de Netbeans, asi que tambien lo descargaremos e instalaremos.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/4/7.jpg" width="50%">
+							</div>
+							<br>
+							<p>En el caso de linux, el archivo descargado sera un .sh asi que tendremos que ejecutarlo en la consola.</p>
+							<p>Para eso abrimos una terminal en la carpeta de descargas y añadimos permisos para ejecutar el instalador.</p>
+							<p style="color:blue">"sudo chmod +x netbeans-8.0.1-javaee-linux.sh"</p>
+							<p>Despues ejecutamos el instalador con <b style="color: blue">"sudo ./nebeans-8.0.1-javaee-linux.sh"</b></p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/4/8.jpg" width="50%">
+							</div>
+							<br>
+							<p>El instalador no tiene complicación, simplemente aceptamos los terminos y condiciones y seleccionamos el lugar donde se instalará.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/4/9.jpg" width="50%">
+							</div>
+							<br>
+							<p>El siguiente paso es muy importante puesto que debemos seleccionar la version del SDK que acabamos de instalar. La cual ya acomodamos por defecto, pero en caso de no estar seleccionada simplemente la buscamos entre las opciones del combo.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/4/10.jpg" width="50%">
+							</div>
+							<br>
+							<p>Despues simplemente comenzará a instalarse.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/4/11.jpg" width="50%">
+							</div>
+							<br>
+							<p>Al final nos quedara nuestro IDE listo para usar con java SDK</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/4/12.jpg" width="50%">
+							</div>
+							<br>
+							<p>Y ahora ejecutamos nuestra aplicación, la cual esta conectada con mysql a nuestra base de datos que nos permite almacenar usuarios de diferente tipo, asi como las ventas del dia, los productos, proveedores, clientes, etc.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/4/13.jpg" width="50%">
+							</div>
+							<br>
+							<p>Basicamente, cada una de las tablas y sus relaciones tienen funcion de CRUD para nuestro negocio.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/4/14.jpg" width="50%">
+							</div>
+							<br>
+							<p>Cada formulario esta vinculado con una tabla distinta. Ademas de usar procedemientos almacenados para actualizar los inventarios cada que se realiza una compra.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/4/15.jpg" width="50%">
+							</div>
+							<br>
+							<p>Aquí podemos ver la base de datos.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/4/16.jpg" width="50%">
+							</div>
+							<br>
+							<div class="col-12 text-center">
+								<h3>Descarga e instalación en Windows</h3>
+							</div>
+							<br>
+							<p>En el caso de windows es mucho mas facil el procedimiento. Lo primero que debemos hacer es descargar el SDK de java junto con netbeans. En el caso de Linux ya vimos como realizar la instalación por separado. Pero en el caso de windows podemos optar por descargar e instalar las dos cosas al mismo tiempo a través de un solo paquete.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/4/17.jpg" width="50%">
+							</div>
+							<br>
+							<p>Ya descargado el instalador, lo ejecutamos para proceder.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/4/18.jpg" width="50%">
+							</div>
+							<br>
+							<p>Luego nos preguntara donde instalar el sdk y el IDE</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/4/19.jpg" width="50%">
+							</div>
+							<br>
+							<p>Al final comenzará la instalación</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/4/20.jpg" width="50%">
+							</div>
+							<br>
+							<p>Por ultimo ejecutamos la aplicación cuando el instalador termine. Y entonces terminamos de probar en windows.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/4/21.jpg" width="50%">
+							</div>
+							<br>
 						</div>
 						<!-- /blog post -->
 
