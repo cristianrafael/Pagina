@@ -1,0 +1,3 @@
+https://github.com/rbaena/tiendaDjango
+https://blog.desdelinux.net/instalar-configurar-xampp-gnulinux/
+https://dev.to/omenapps/modern-django-project-examples-58mm

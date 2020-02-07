@@ -95,7 +95,174 @@
 
 						<!-- blog post -->
 						<div class="blog-post">
-							<p></p>
+							<p>Django es un framework para desarrollar aplicaciones web que esta desarrollado en python. Así que por obvias razones, lo primero que tenemos que tomar en cuenta es que debemos realizar la instalación de python para poder utilizar nuestro framework.</p>
+							<p>Dado que la instalación de linux siempre es un poco mas complicada empezaremos con ella y despues nos enfocaremos en windows.</p>
+							<div class="col-12 text-center">
+								<h3>Descarga e instalación en Linux Mint</h3>
+							</div>
+							<br>
+							<p>Como la distribución que se esta usando para realizar este ejemplo es Mint podemos realizar la misma instalación de ubuntu, ya que linux mint deriva directamente de ubuntu.</p>
+							<p>Aclarando lo anterior entonces, es importante mencionar que nuestro sistema operativo ya viene con dos versiones de python instaladas. Las cuales podemos revisar si utlizamos los siguientes comandos:</p>
+							<p style="color: blue">"python --version"</p>
+							<p style="color: blue">"python3 --version"</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/5/1.jpg" width="50%">
+							</div>
+							<br>
+							<p>Como podemos ver, tenemos las versiones 2.7.17 y 3.6.9 las cuales son suficientes para instalar Django junto con ellas.</p>
+							<p>Pero en el caso de que queramos instalar una version diferente vamos a seguir los siguientes pasos:</p>
+							<br>
+							<p>Lo primero es actualizar nuestros repositorios con: <b style="color: blue">"sudo apt-get update"</b></p>
+							<p>Despues instalamos la version deseada por ejemplo la version 3.5 con: <b style="color: blue">"sudo apt-get install python3.5"</b></p>
+							<p>Luego de la instalación revisamos la version con <b style="color: blue">"python3.5 -V"</b></p>
+							<br>
+							<p>Ahora bien, para compilar es necesario contar con ciertos paquetes que debemos instalar para continuar.</p>
+							<p style="color: blue">"sudo apt install build-essential checkinstall"</p>
+							<p style="color: blue">"sudo apt install libreadline-gplv2-dev libncursesw5-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev"</p>
+							<br>
+							<p>Terminada la instalacíon vamos a descargar el codigo fuente desde la pagina oficial.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/5/2.jpg" width="50%">
+							</div>
+							<br>
+							<p>Podemos descargar el comprimido desde el sitio o hacerlo desde la terminal con wget</p>
+							<p style="color:blue">"wget https://www.python.org/ftp/python/3.5.0/Python-3.5.0.tar.xz"</p>
+							<p>Al descargar el paquete lo descomprimimos con <b style="color: blue">"tar xvf Python-3.5.0.tar.xz" </b></p>
+							<p>Nos quedara una carpeta a la cual accedemos con "cd" y luego ejecutamos el comando <b style="color: blue">"./configure"</b> y con esto tendriamos nuestra version de python lista para compilar.</p>
+							<p>Si nos llegará a dar un error podemos probar con los comandos siguientes para saltarnos la creación del enlace simbolico.</p>
+							<p style="color: blue">"./configure -enable-optimizations"</p>
+							<p style="color: blue">"sudo make altinstall"</p>
+							<br>
+							<p>Una vez instalemos nuestra version de python, la idea es poder entrar al shell que nos proporciona el compulador para escribir nuestros codigos utilizando el comando <b style="color: blue">"python3"</b> o la version que queramos.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/5/3.jpg" width="50%">
+							</div>
+							<br>
+							<p>Una parte fundamental de trabajar con python es utlizar los entornos virtuales, que nos ayudaran a controlar las versiones de los paquetes que instalemos para que estos no causen conflicto con otros proyectos.</p>
+							<p>La idea es solo instalar lo necesario para cada entorno y no mezclar dependencias con otros proyectos que puedan necesitar de versiones mas viejas o mas nuevas.</p>
+							<p>Ahora, para crear un entorno virtual debemos descargar la dependencia python3-venv con el comando <b>"sudo apt-get install python3-venv"</b>. Este paquete normalmente viene instalado en otros distribuciones, pero en Ubuntu y derivados no.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/5/4.jpg" width="50%">
+							</div>
+							<br>
+							<p>Despues utilizamos el comando <b style="color: blue">"python3 -m venv [nombreDeNuestroEntorno]"</b> para crear el entorno virtual. En mi caso le pondre "practica5" al entorno.</p>
+							<p>Posteior a eso tecleamos <b style="color: blue">"source [direccionEntornoVirtual]/bin/activate"</b> para ejecutarlo.</p>
+							<p>Al final, la consola nos tiene que poner entre parentesis el entorno virtual que creamos. Esto nos indica que ahora los paquetes que instalemos se haran sobre ese entorno y no sobre toda la maquina.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/5/5.jpg" width="50%">
+							</div>
+							<br>
+							<br>
+							<br>
+							<p>Ahora vamos a proceder con la instalación de Django, para esto tenemos dos opciones, descargar directamente el paquete desde los repositorios de Ubuntu o utilizar la forma recomendada, la que es basicamente utilizar Pip que es el administrador de paquetes de python, algo asi como composer para php.</p>
+							<p>Para instalar pip usamos el comando <b style="color: blue">"sudo apt-get install python3-pip"</b> (suponiendo que vamos a utilizar la version 3 de python)</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/5/6.jpg" width="50%">
+							</div>
+							<br>
+							<p>Una vez descargado el gestor de paquetes, entonces ahora si ejecutamos el comando para instalar django: <b style="color: blue">"pip3 install django"</b></p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/5/7.jpg" width="50%">
+							</div>
+							<br>
+							<p>Despues de haber instalado django vamos a ver si python puede reconocer la libreria desde el shell de python. Para eso tecleamos python3 para comenzar a escribir codigo, y escribimos lo siguiente:</p>
+							<p>>> import django</p>
+							<p>>> print(django.get_version())</p>
+							<p>Al ejecutar las lineas anteriores, el shell nos tendra que imprimir la version de django que hemos instalado, y con eso habremos terminado la instalación.
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/5/8.jpg" width="50%">
+							</div>
+							<br>
+							<p>Ahora, para comprobar que la instalación se realizó corretamente vamos a crear un nuevo proyecto y ejecutarlo.</p>
+							<p>Lo primero es crear una carpeta donde queramos, en mi caso lo haré en el escritorio, despues abrimos una consola en la carpeta y ejecutamos el comando: <b style="color: blue">"django-admin startproject mysite".</b></p>
+							<p>Esto nos creará una carpeta llamada mysite con todas las dependencias en ella.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/5/9.jpg" width="50%">
+							</div>
+							<br>
+							<p>Con el proyecto creado entonces ejecutamos el comando <b style="color: blue">"./manage.py runserver"</b> para lanzar la aplicación.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/5/10.jpg" width="50%">
+							</div>
+							<br>
+							<p>Si entramos al navegador y colocamos la direccion 127.0.0.1:8000 podremos ver nuestro proyecto ejecutandose.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/5/11.jpg" width="50%">
+							</div>
+							<br>
+							<p>Para terminar vamos a probar nuestra aplicación previamente desarrollada, la cual consiste en una lista de tareas que genera elementos para poder actualizarlos o eliminarlos segun sea el caso.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/5/12.jpg" width="50%">
+							</div>
+							<br>
+							<p>Ahora si nos vamos al navegador podemos ver nuestra aplicación.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/5/13.jpg" width="50%">
+							</div>
+							<br>
+							<p>Si agregamos una nueva tarea se vera reflejada en la lista de abajo.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/5/14.jpg" width="50%">
+							</div>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/5/15.jpg" width="50%">
+							</div>
+							<br>
+							<div class="col-12 text-center">
+								<h3>Descarga e instalación en Windows</h3>
+							</div>
+							<br>
+							<p>Como ya se mencionó al inicio, la instalación de windows es mucho mas sencilla, basta con ir a la pagina <a href="https://www.python.org/downloads/" target="_blank" style="color: blue">https://www.python.org/downloads/</a> y descargar la version que queramos.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/5/16.jpg" width="50%">
+							</div>
+							<br>
+							<p>Al descargar el instalador y ejecutarlo, el asistente nos dara la opción de elegir la carpeta de destino ademas de agregar la variable del entorno, la cual vamos a palomear.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/5/17.jpg" width="50%">
+							</div>
+							<br>
+							<p>El gestor de paquetes PIP ya viene incluido en la instalación por lo que solo bastara con crear un entorno virtual e instalar django.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/5/18.jpg" width="50%">
+							</div>
+							<br>
+							<p>Cuando termine la creacion del entorno, lo activamos y despues instalamos django.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/5/19.jpg" width="50%">
+							</div>
+							<br>
+							<p>Despues creamos nuestro proyecto y lo ejecutamos.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/5/20.jpg" width="50%">
+							</div>
+							<br>
+							<p>Al abrir el navegador y acceder a la direccion 12.0.0.1:8000 podremos ver nuestro proyecto funcionando, si todo sale bien nos aparecera la vista inicial y con eso terminanos la instalación en windows.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/5/21.jpg" width="50%">
+							</div>
+							<br>
 						</div>
 						<!-- /blog post -->
 
