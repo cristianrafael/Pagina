@@ -95,7 +95,161 @@
 
 						<!-- blog post -->
 						<div class="blog-post">
-							<p></p>
+							<p>Al igual en las actividades anteriores, vamos a comenzar primero con la instalación de linux y despues con windows.</p>
+							<br>
+							<div class="col-12 text-center">
+								<h3>Descarga e instalación en Linux Mint</h3>
+							</div>
+							<br>
+							<p>Concretamente, instalar ruby on rails en linux mint es bastante sencillo por ser una distribución de ubuntu.</p>
+							<p>El primer paso basicamente es asegurarnos de tener nuestras dependencias actualizadas con: <b style="color: blue;">"sudo apt-get update"</b></p>
+							<p>Posterior a eso vamos a descargar e instalar nuestros paquetes utilizando el comando: <b style="color:blue">"sudo apt install ruby rails"</b></p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/6/1.jpg" width="50%">
+							</div>
+							<br>
+							<p>Una vez instalados, vamos a revisar que versiones obtuvimos con los comandos: <b style="color:blue">"ruby -v"</b> y <b style="color: blue">"rails -v"</b></p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/6/2.jpg" width="50%">
+							</div>
+							<br>
+							<p>Bien, ahora vamos a instalar las dependencias faltantes con el comando: <b style="color: blue">"sudo apt-get install build-essential patch ruby-dev zlib1g-dev liblzma-dev"</b></p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/6/3.jpg" width="50%">
+							</div>
+							<br>
+							<p>Cuando se instale por completo, vamos a crear un nuevo proyecto con: <b style="color: blue">"rails new linuxconfig"</b>. Este comando nos va a crear un directorio en nuestro home directory, pero habrá que instalar las aplicaciones necesarias faltantes.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/6/4.jpg" width="50%">
+							</div>
+							<br>
+							<p>Para instalar lo que falta, simplemente accedemos a la carpeta creada y usamos el comando: <b style="color: blue">"bundle install"</b></p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/6/5.jpg" width="50%">
+							</div>
+							<br>
+							<p>En caso de no contar con sqlite3 instalado, entonces lo tendremos que instalar manualmente con: <b style="color:blue">"sudo apt install libsqlite3-dev sqlite3"</b>.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/6/6.jpg" width="50%">
+							</div>
+							<br>
+							<p>En caso de necesitar una version especifica de sqlite3 podemos poner "-v [numero de version]" para instalar la necesaria.</p>
+							<p>Al final vamos a activar nuestro servidor virtual con: <b style="color: blue">"rails s -b 127.0.0.1"</b>.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/6/7.jpg" width="50%">
+							</div>
+							<br>
+							<p>Si entramos en nuestro navegador a la ruta 127.0.0.1:3000 encontraremos nuestra aplicación de ruby on rails.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/6/8.jpg" width="50%">
+							</div>
+							<br>
+							<p>Nota: Cabe aclarar que el procedimiento se realizo sin la necesidad de RVM, el cual cambia completamente la instalación del framework, pero controla las versiones que vamos instalando, parecido a pip de python.</p>
+							<p>Ademas de ruby on rails, tambien vamos a instalar IONIC con: <b style="color: blue">"sudo npm install -g ionic"</b></p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/6/9.jpg" width="50%">
+							</div>
+							<br>
+							<p>Cuando la aplicación se instale, comprobamos la version con: <b style="color: blue">"ionic -v"</b></p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/6/10.jpg" width="50%">
+							</div>
+							<br>
+							<p>Ademas de ionic, necesitaremos cordova para mostrar las aplicaciones que hagamos, de igual manera lo instalamos con npm de la siguiente manera: <b style="color: blue">"sudo npm install -g cordova"</b>.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/6/11.jpg" width="50%">
+							</div>
+							<br>
+							<p>Cuando tengamos todo instalado, vamos a crear una nueva aplicacion con: <b style="color:blue">"sudo ionic start [nombre_de_la_app] blank"</b>. Despues nos pedira seleccionar un framework de javascript para instalarlo en conjunto.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/6/12.jpg" width="50%">
+							</div>
+							<br>
+							<p>Para correr la aplicación usamos: <b>"sudo ionic serve --lab"</b>. Nos pedirá que instalemos lab, lo cual hará de manera automatica se le decimos que si.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/6/13.jpg" width="50%">
+							</div>
+							<br>
+							<p>Al abrir el navegador podremos ver nuestra aplicacion en blanco, en la ruta localhost puerto 8200.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/6/14.jpg" width="50%">
+							</div>
+							<br>
+							<div class="col-12 text-center">
+								<h3>Descarga e instalación en Windows</h3>
+							</div>
+							<br>
+							<p>Para el caso de windows, basta con descargar el instalador de la pagina oficial. Pero nosotros vamos a descargar el pack que viene con ruby y rails juntos de la siguiente pagina: <a target="_blank" href="http://railsinstaller.org/en" style="color:blue">http://railsinstaller.org/en</a></p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/6/15.jpg" width="50%">
+							</div>
+							<br>
+							<p>La instalación es muy sencilla, solo tenemos que asegurarnos de palomear la opcion de añadir ejecutables.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/6/16.jpg" width="50%">
+							</div>
+							<br>
+							<p>Al terminar la instalación podemos acceder a las variables del entorno ruby y rails desde la consola de windows. </p>
+							<p>Si creamos un proyecto nuevo, el asistente nos creará la carpeta como en linux.<p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/6/17.jpg" width="50%">
+							</div>
+							<br>
+							<p>Al igual que en linux, vamos a requerir instalar sqlite3, asi que no que vamos a hacer, será abrir el Gemfile y editar la version de sqlite3 por la siguiente: <b style="color: red">gem 'sqlite3', '~> 1.3.13"</b></p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/6/18.jpg" width="50%">
+							</div>
+							<br>
+							<p>Luego tecleamos <b style="color: blue">"bundle install" </b> en la consola para instalar las dependencias de nuestra aplicación.</p>
+							<p>Ahora vamos a lanzar la aplicacion con: <b style="color:blue"> "rails s -b 127.0.0.1"</b></p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/6/19.jpg" width="50%">
+							</div>
+							<br>
+							<p>Si abrimos el navegador en localhost puerto 3000 veremos nuestra app.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/6/20.jpg" width="50%">
+							</div>
+							<br>
+							<p>Para instalar IONIC en windows, necesitamos tener instalado nodejs. El cual podemos descargar el instalador desde la pagina: <a href="https://nodejs.org/es/" target="_blank" style="color: blue">https://nodejs.org/es/</a>. E instalamos el programa como cualquier otro.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/6/21.jpg" width="50%">
+							</div>
+							<br>
+							<p>Cuando este instalado, entonces abrimos una consola e instalamos cordova con el comando: <b style="color:blue">"npm install -g cordova ionic"</b></p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/6/22.png" width="50%">
+							</div>
+							<br>
+							<p>Los pasos siguientes, son los mismos que en linux, para crear un nuevo proyecto con: <b style="color: blue">"ionic start Holamundo blank"</b></p>
+							<p>Lo iniciamos con <b style="color:blue">"ionic serve --lab"</b> y asi arrancamos la aplicación.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/6/23.jpg" width="50%">
+							</div>
+							<br>
 						</div>
 						<!-- /blog post -->
 
