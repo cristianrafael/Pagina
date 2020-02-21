@@ -95,7 +95,195 @@
 
 						<!-- blog post -->
 						<div class="blog-post">
-							<p></p>
+							<div class="col-12 text-center">
+								<h3>Instalación</h3>
+							</div>
+							<br>
+							<p>Windows server es un sistema operativo para servidores creado por Microsoft, lo que significa que es de codigo cerrado. Aun así, para llevar a cabo esta practica vamos a optar por descargar el iso de la pagina oficial: <a href="https://www.microsoft.com/es-es/evalcenter/evaluate-windows-server-2012-r2" target="_blank" style="color:blue">https://www.microsoft.com/es-es/evalcenter/evaluate-windows-server-2012-r2</a> , y realizar una prueba por 180 dias. </p>
+							<p>Podemos elegir entre diferentes versiones del sistema operativo, pero nosotros nos enfocaremos en la version 2012 R por ser una versión mas estable, mas ligera y que no pide tantos requisitos.</p>
+
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/8/1.jpg" width="50%">
+							</div>
+							<br>
+							<p>Para instalar el sistema operativo, vamos a utilizar una herramienta llamada RUFUS para hacer nuestra memoria booteable. Del siguiente enlace: <a href="https://rufus.ie/" target="_blank" style="color:blue">https://rufus.ie/</a></p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/8/2.jpg" width="50%">
+							</div>
+							<br>
+							<p>Al iniciar la instalación vamos a seleccionar el idioma y la distribución del teclado.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/8/3.jpg" width="50%">
+							</div>
+							<br>
+							<p>Luego el asistente nos dará a eligir entre el tipo de instalación. Lo primero es decidir entre si quieremos usar la interfaz grafica o trabajar solo con el shell de windows, y lo segundo es decidir entra la version estandar y la version de centro de datos. Pero con la estandar nos bastará, y con la GUI para hacer mas dinamico el tutorial.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/8/4.jpg" width="50%">
+							</div>
+							<br>
+							<p>Despues de aceptar los terminos y condiciones, nos pedirá si queremos actualizar la version de windows que tengamos o instalar todo desde 0. Desde luego que nos interesa solo la segunda opcion.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/8/5.jpg" width="50%">
+							</div>
+							<br>
+							<p>Lo siguiente es ver el tema de las particiones, lo cual es un proceso que ya vimos al instalar windows y linux. En mi caso usare el disco completo para instalar windows server, asi que basicamente vamos a dejar que windows genere el solo las particiones que necesite.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/8/6.jpg" width="50%">
+							</div>
+							<br>
+							<p>Por ultimo, comenzará a instalarse el sistema operativo. Como hemos decido instalar la version con GUI entonces tardará un poco más.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/8/7.jpg" width="50%">
+							</div>
+							<br>
+							<p>Al completar la instalación unicamente tendremos que crear una contraseña para el administrador del servidor.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/8/8.jpg" width="50%">
+							</div>
+							<br>
+							<div class="col-12 text-center">
+								<h3>Active Directory</h3>
+							</div>
+							<p>Active Directory es una herramienta de Microsoft que proporciona servicios de directorio en una red LAN. Con ello es capaz de ofrecer a cada usuario un servicio que puede estar ubicado en uno o más servidores de la empresa, administrar las credenciales de los diferentes usuarios, y controlar toda la política que afecta a la red interna de la compañía.</p>
+							<div class="col-12">
+								<h4>Caracteristicas</h4>
+							</div>
+							<p>Gracias a Active Directory, se pueden gestionar todos los aspectos anteriores de una forma muy simple y sin la necesidad de tener que actuar en cada uno de los ordenadores que forman parte de la compañía. Esta es la forma más sencilla de gestionar usuarios, bandejas de correo, documentos, bases de datos, tablas de Excel y mucho más.</p>
+							<p>La tecnología de Active Directory se basa en varios protocolos de red, entre los cuales destacan LDAP, DHCP, KERBEROS y DNS. Esto significa que Active Directory funciona como una especie de base de datos, en la cual se van almacenando en tiempo real, datos sobre la identificación de los usuarios que forman parte de una red de ordenadores. Todos estos datos quedan bajo un elemento central de control.</p>
+							<div class="col-12">
+								<h4>Ejemplos</h4>
+							</div>
+							<p>Cada uno de los usuarios que forman parte de la base de datos de Active Directory está identificado por una serie de atributos, algunos de los más importantes son el nombre, los apellidos y el correo electrónico. Active Directory asignará este usuario a un grupo, cuyos privilegios están limitados.</p>
+							<p>De esta forma, cuando el usuario inicie la sesión con sus credenciales, será identificado de inmediato por Active Directory. Tras ello, será Active Directory quien verifique las credenciales del usuario y envié a su ordenador la información relativa a dicho usuario.</p>
+							<p>Una vez que todo lo anterior se haya completado, el usuario verá que su ordenador arranca de forma normal, teniendo acceso a todos sus documentos, imágenes, y demás archivos a los que tiene permitido el acceso. Active Directory también determinará si el usuario puede acceder a otros recursos en línea, como una impresora o un fax.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/8/9.png" width="50%">
+							</div>
+							<br>
+							<p>En caso de que ocurra una avería en el ordenador que el usuario está utilizando, bastaría con ir a otro ordenador y volver a iniciar sesión con sus credenciales. Con ello verá que todo sigue estando igual que en su anterior ordenador. La única limitación es que no estarán disponibles los archivos que estuvieran almacenados de forma local en el anterior ordenador.</p>
+							<br>
+
+							<div class="col-12 text-center">
+								<h3>Implementación del Active Directory</h3>
+							</div>
+							<p>Lo primero que debemos tomar en cuenta es que para esta configuración deberiamos utilizar un dominio real, pero por fines practicos solo usaremos uno inventado por nosotros con el fin de conocer el proceso que llevaria esta instalación.</p>
+							<p>Para empezar, debemos iniciar el administrador del servidor, que es un programa que se inicia en segundo plano. Aquí lo que vamos a ver es el grupo de servidores que tenemos ejecutandose. Vamos a seleccionar la opcion de agregar roles y caracteristicas.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/8/10.jpg" width="50%">
+							</div>
+							<br>
+							<p>Como es la primera vez vamos a configurar las opciones principales. Aquí solo damos siguiente.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/8/11.jpg" width="50%">
+							</div>
+							<br>
+							<p>Seleccionamos la primera opcion: Instalacion basada en caracteristicas o roles.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/8/12.jpg" width="50%">
+							</div>
+							<br>
+							<p>Como servidor de destino vamos a seleccionar un servidor del grupo de servidores.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/8/13.jpg" width="50%">
+							</div>
+							<br>
+							<p>Dentro de la lista que se despliega,vamos a instalar la opcion de Servicios de dominio de Active Directory.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/8/14.jpg" width="50%">
+							</div>
+							<br>
+							<p>Al seleccionar el checkbox nos mostrará una ventana de las herramientas que se van a instalar.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/8/15.jpg" width="50%">
+							</div>
+							<br>
+							<p>Despues, las caracteristicas a instalar, dejamos las que estan por defecto.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/8/16.jpg" width="50%">
+							</div>
+							<br>
+							<p>Ahora nos mostrará lo que hemos visto del active directory y lo que puede hacer por noostros. Adicional, instalará mas herramientas para la utilización.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/8/17.jpg" width="50%">
+							</div>
+							<br>
+							<p>Luego nos dará un resumen de lo que se va a descargar e instalar, en caso de ser necesario podemos autorizar el reinicio.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/8/18.jpg" width="50%">
+							</div>
+							<br>
+							<p>Ya instaladas, las herramientas, pasamos a configurarlas.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/8/19.jpg" width="50%">
+							</div>
+							<br>
+							<p>En la primera parte, vamos a crear un nuevo bosque, el cual vamos a nombrar como nuestro nombre de dominio. Al final siempre usamos .local para terminar el nombre.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/8/20.jpg" width="50%">
+							</div>
+							<br>
+							<p>El siguiente paso es seleccionar DNS y utilizar una contraseña de recuperación.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/8/21.jpg" width="50%">
+							</div>
+							<br>
+							<p>En la pantalla siguiente solo damos continuar.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/8/22.jpg" width="50%">
+							</div>
+							<br>
+							<p>Ahora solo corroboramos que el nombre del domino sea el que colocamos anteriormente.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/8/23.jpg" width="50%">
+							</div>
+							<br>
+							<p>Las rutas de acceso, las dejamos por defecto.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/8/24.jpg" width="50%">
+							</div>
+							<br>
+							<p>Ahora revisamos el resumen de la configuración y continuamos.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/8/25.jpg" width="50%">
+							</div>
+							<br>
+							<p>Despues de un checklist de los prerequisitos procedemos con la instalación.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/8/26.jpg" width="50%">
+							</div>
+							<br>
+							<p>Cuando la instalación se complete, el equipo se reiniciará. Entonces tendremos nuestras opciones configuradas de Active Directory y DNS.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/8/27.jpg" width="50%">
+							</div>
+							<br>
 						</div>
 						<!-- /blog post -->
 
