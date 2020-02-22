@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Practica 8</title>
+		<title>Practica 9</title>
 
 		<!-- Google font -->
 		<link href="https://fonts.googleapis.com/css?family=Lato:700%7CMontserrat:400,600" rel="stylesheet">
@@ -59,7 +59,7 @@
 		<div class="hero-area section">
 
 			<!-- Backgound Image -->
-			<div class="bg-image bg-parallax overlay" style="background-image:url(./img/practica_8.jpg)"></div>
+			<div class="bg-image bg-parallax overlay" style="background-image:url(./img/practica_9.jpg)"></div>
 			<!-- /Backgound Image -->
 
 			<div class="container">
@@ -68,11 +68,11 @@
 						<ul class="hero-area-tree">
 							<li><a href="index.html">Home</a></li>
 							<li><a href="practicas.html">Practicas</a></li>
-							<li>Instalación de Windows Server</li>
+							<li>Usuarios y grupos en Windows Server</li>
 						</ul>
-						<h1 class="white-text">Instalación de Windows Server</h1>
+						<h1 class="white-text">Usuarios y grupos en Windows Server</h1>
 						<ul class="blog-post-meta">
-							<li class="blog-meta-author">14 de Marzo 2020</li>
+							<li class="blog-meta-author">21 de Marzo 2020</li>
 						</ul>
 					</div>
 				</div>
@@ -95,8 +95,91 @@
 
 						<!-- blog post -->
 						<div class="blog-post">
-						
+							<p>Antes de comenzar con el procedimiento de la creacion de los uusarios y grupos, es necesario aclarar que podemos hacerlo de dos maneras distintas.</p>
+							<p>La primera es la creación de usuarios y grupos de manera local, y estos NO nos serviran para conectarnos de manera remota. Este tipo de configuración esta pensada para agregar administradores o encargados del servidor, y no para usuarios comunes o de areas que sean indiferentes al area administrativa del servidor.</p>
+							<p>La segunda opción consiste en hacer uso de Active Directory para crear usuarios y grupos que puedan ser usados desde el dominio que creamos. Por razones lógicas vamos a usar esta configuración para hacer uso del servidor como tal.</p>
+							<p>Partiendo desde la configuración previa de la practica pasada, vamos a crear los usuarios.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/8/27.jpg" width="50%">
+							</div>
+							<br>
+							<p>Empezamos dando click en inicio, y seleccionamos: "Herramientas administrativas", despues nos abrira una ventana con un listado de herramientas. Ahí vamos a buscar Dominios y confianzas de Active Directory.</p>
+							<p>Estando ahí, vamos a dar click derecho en nuestro dominio y seleccionar: "Administrar". Si todo sale bien, nos deberá mostrar la siguiente ventana.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/9/1.jpg" width="50%">
+							</div>
+							<br>
+							<p>Si observamos bien, dentro de nuestro dominio se despliegan varias carpetas y una de ellas es la de usuarios, si la seleccionamos podemos ver todos los usuarios que vienen por defecto desde la instalación de windows server. Basicamente son usuarios y grupos destinados a diferentes tipos de servicios y privilegios.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/9/2.jpg" width="50%">
+							</div>
+							<br>
+							<p>Una de las opciones con las que contamos, es que podemos ir creando una unidad organizativa e ir creando nuestro arbol jerarquico de nuestra empresa. En nuestro caso vamos a crear solo los usuarios y grupos en la misma raiz, porque no tenemos una estructura como tal, sin embargo es recomendable utilizar esta jerarquia para que se entienda mejor la administración de cargos y departamentos.</p>
+							<br>
+							<div class="col-12 text-center">
+								<h4>Creación de Usuarios</h4>
+							</div>
+							<br>
+							<p>Si hacemos click derecho en nuestro dominio, podemos crear un nuevo usuario.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/9/3.jpg" width="50%">
+							</div>
+							<br>
+							<p>Nuestra intención es crear la estructura siguiente entre usuarios y grupos.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/9/3_1.jpg" width="50%">
+							</div>
+							<br>
+							<p>El siguiente formulario nos permite crear los usuarios con la información necesaria para la cuenta, como el nombre real y apellidos, asi como su contraseña y su nombre de usuario.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/9/4.jpg" width="50%">
+							</div>
+							<br>
+							<p>La siguiente ventana, nos da varias opciones que podemos tener en cuenta para el usuario.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/9/5.jpg" width="50%">
+							</div>
+							<br>
+							<p>Al terminar de agregar los usuarios vamos a tener una lista como la siguiente. Despues vamos por los grupos.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/9/6.jpg" width="50%">
+							</div>
+							<br>
+							<div class="col-12 text-center">
+								<h4>Creación de Grupos</h4>
+							</div>
+							<br>
+							<p>Para la creación de grupos es necesario indicarle el nombre del grupo, tambien el ambito del grupo, que practicamente es el alcance que tiene nuestro grupo, si seleccionamos dominio local entonces solo seremos capaces de asignar permisos a recursos locales. Por otro lado si escogemos global, lo podremos hacer desde cualquier dominio dentro de nuestro bosque, aunque si elegimos global sera para cualquier dominio.</p>
+							<p>En la segunda opcion, vamos a elegir seguridad porque queremos administrar los permisos basicamente.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/9/7.jpg" width="50%">
+							</div>
+							<br>
+							<p>Al crear nuestros grupos y usuarios al final se verá asi.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/9/8.jpg" width="50%">
+							</div>
+							<br>
+							<p>Al final tenemos que agregar los usuarios a los grupos, para esto solo hacemos click a un grupo, y en su pestaña miembros damos en agregar nuevo.</p>
+							<p>En la ventana emergente solo escribimos los nombres de los usuarios, podemos crompobar los nombres para estar seguros. Basicamente vamos a repetir esto, hasta que cada usuario se encuentre en su grupo correspondiente.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/9/9.jpg" width="50%">
+							</div>
+							<br>
+							<p>El hecho de que la estructura mostrada en esta practica pretende agregar a un solo grupo cada usuario no significa que no podamos agregar a un usuario a mas grupos. Pero debemos de ver que permisos queremos que tengan ciertos grupos, o tambien podemos configurar las opciones de un solo usuario para colocar excepciones.</p>
 						</div>
+
 						<!-- /blog post -->
 
 
