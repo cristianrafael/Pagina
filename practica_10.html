@@ -96,10 +96,239 @@
 						<!-- blog post -->
 						<div class="blog-post">
 							<div class="col-12 text-center">
+								<h4>Antes de empezar</h4>
+							</div>
+							<p>Para esta practica se realizó nuevamente la instalación de Django y Rails pero esta vez para windows server 2012 R2. De cualquier forma la instalación se encuentra en las practicas <a href="practica_5.html" style="color: blue">5</a> y <a href="practica_6.html" style="color: blue">6</a>. Por lo que suponemos que salvo por cuestiones de permisos del sistema operativo las guias anteriores te diran como instalar los respectivos Frameworks.</p>
+							<p>Como parte de esta practica, hemos utilizado los usuarios y grupos creados en la <a href="practica_9.html" style="color: blue">practica 9</a> para usarlos mecanismo de autentificación.</p>
+							<br>
+							<div class="col-12 text-center">
+								<h4>Preparación Windows Server</h4>
+							</div>
+							<br>
+							<p>Para que django pueda leer los usuarios de nuestro active directory es necesario instalar el servicio de AD LS que viene integrado en la aplicacion de administrador de servidor de windows server. Este servicio viene nombrado como "Active Directory Lightweight Directory Services"</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/10/1.jpg" width="50%">
+							</div>
+							<br>
+							<p>La instalación del servicio es muy simple, basta con dejar las opciones predeterminadas y entonces la computadora se reiniciará.</p>
+							<p>Sin embargo la configuracion de este servicio sera requerida para que podamos hacer uso de la informacion del active directory, ya que Django se conecta por LADP al servidor.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/10/2.jpg" width="50%">
+							</div>
+							<br>
+							<p>Para la configuración, el asistente nos pedira que pongamos un nombre para la particion, la cual vamos a nombrar a si, y con el nombre de nuestro dominio. (Este paso es necesario, pero no afecta localmente).</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/10/3.jpg" width="50%">
+							</div>
+							<br>
+							<p>Ahora vamos a seleccionar los puertos donde escuchara el servicio.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/10/4.jpg" width="50%">
+							</div>
+							<br>
+							<p>Ahora vamos a rellenar los campos del formulario con etiquetas que usaremos mas adelante.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/10/5.jpg" width="50%">
+							</div>
+							<br>
+							<p>Marcamos la instancia como unica, pues no tenemos ninguna otra instalada.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/10/6.jpg" width="50%">
+							</div>
+							<br>
+							<p>Por utlimo vamos a seleccionar la cuenta con los permisos para iniciar el servicio. En nuestro caso sera el mismo usuario que habilita los demas servicios, en todo caso siempre es el administrador.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/10/7.jpg" width="50%">
+							</div>
+							<br>
+							<p>Al final obtendremos un resumen de lo que vamos a instalar y la configuración seleccionada.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/10/8.jpg" width="50%">
+							</div>
+							<br>
+							<p>Cuando la instalación termine y el servicio se inicie, vamos a abrir la aplicación editor ADSI.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/10/9.jpg" width="50%">
+							</div>
+							<br>
+							<p>En esta aplicación lo que vamos a hacer es crear una nueva conexión con los valores predeterminados. Despues podremos ver como se despliega nuestro directorio y veremos nuestros usuarios creados. Lo que debemos hacer es prestar atencion al nombre distintivo de cada carpeta/usuario/grupo ya que nos servirar para hacer una busqueda de los usuarios desde las aplicaciones.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/10/10.jpg" width="50%">
+							</div>
+							<br>
+							<div class="col-12 text-center">
 								<h4>Django</h4>
 							</div>
+							<br>
+							<p>Ahora ya en django, vamos a utilizar la aplicación de la <a href="practica_5.html" style="color: blue"> practica 5</a>.</p>
 
-							
+							<p>Por default, todos los proyectos de django cuentan con un sistema de autentificación de usuarios, solo es necesario correr las migraciones para crear las tablas dentro de nuestra base de datos de MySql con el comando:  <b style="color: blue">"python manage.py migrate"</b>.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/10/11.jpg" width="50%">
+							</div>
+							<br>
+							<p>Si entramos en la ruta "/admin/login" podremos ver el formulario de inicio de sesión.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/10/12.jpg" width="50%">
+							</div>
+							<br>
+							<p>Si creamos un super usuario con el comando: <b style="color:blue">"python manage.py createsuperuser"</b>, vamos a poder loguearnos y editar los usuarios, grupos y permisos. Pero este usuario se crea en nuestra base de datos pero, que pasaría si tenemos miles de usuarios en nuestro servidor, y no podriamos exportar de uno por uno a nuestra base de datos de MySql. Por lo que, optaremos por conectar los usuarios de nuestro Active Directory para que podamos iniciar sesion con esos usuarios.</p>
+
+							<p>Para lograr eso primero es necesario instalar el paquete python-ldpa con el comando: <a>"pip install python-ldap"</a>. En caso de que tengamos algun error al instalarlo desde pip, tambien podemos descargar el compilado de esta <a style="color: blue" href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#python-ldap">pagina</a>, y ejectuarlo con pip directamente.</p>
+
+							<p>Una vez instalada la aplicacion, vamos a cambiar la configuración de nuestro proyecto de django para que busque los usuarios del active directory.</p>
+
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/10/13.jpg" width="100%">
+							</div>
+							<br>
+							<p>El primer rectangulo rojo muestra las credenciales necesarias para hacer la conexion. Por ejemplo la direccion del servidor, en nuestro caso trabajamos en localhost. La linea siguiente actualiza los usuarios, mientras que las siguientes dos, forman parte de las credenciales de un usuario exclusivo creado para hacer la conexion. Al final solo ponemos el nombre de nuestro dominio.</p>
+
+							<p>En el siguiente bloque vamos a poner la direccion de nuetro directorio de usuarios para buscar usuarios y grupos.</p>
+
+							<p>El tercer grupo, es acerca de los permisos que asigna django para el sistema. La etiqueta <b style="color: blue">"is_superuser"</b> le otorga a los usuarios que se encuentran en el grupo la completa edicion del sistema, generar y editar usuarios y grupos.</p>
+							<p> Por otro lado la etiqueta <b style="color: blue">"is_staff"</b> permite unicamente el acceso a la aplicación, sin embargo no son capaces de actualizar a los usuarios. De cualquier modo, ambos grupos pueden modificar el CRUD de nuestra aplicación.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/10/14.jpg" width="50%">
+							</div>
+							<br>
+							<p>La aplicación no permite la modificacion de usuarios que no pertenecen a ningun grupo anterior.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/10/15.jpg" width="50%">
+							</div>
+							<br>
+							<p></p>
+							<br>
+							<div class="col-12 text-center">
+								<h4>Ruby on Rails</h4>
+							</div>
+							<br>
+							<p>En el caso de Rails haremos la conexión de igual manera con LDAP, pero considerando que el framework es completamente distinto, vamos a partir de un CRUD que nos permite administrar personas y eventos en nuestra base de datos. Pero en nuestro caso queremos que solo las personas que se encuentren en un determinado grupo de nuestro Active Directory puedan modificar estos registros.</p>
+
+							<p>La configuración previa de windows server tambien nos servirá para Rails, de igual manera solo tenemos que crear un grupo que sea destinado para Rails, en mi caso seguiré utilizando el grupo <b style="color: blue">"django-admins"</b> pero podemos crear otro y llamarlo <b style="color: blue">"rails-admins"</b> o algo por el estilo. Yo usaré el mismo por cuestiones practicas.</p>
+
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/10/16.jpg" width="40%">
+							</div>
+							<br>
+
+							<p>Utilizando esta configuración entonces nos queda claro que las personas que se encuentren en el grupo tendran permiso de utilizar nuestro crud, asi que no es necesario modificar nuestra base de datos del crud para crear permisos adicionales, pero por su puesto que podemos hacerlo, por ejemplo al restringir rutas que solo usuarios logueados de determinados grupos pueden ingresar, o hacer una lista negra de usuarios para bloquearles especificamente a ellos el acceso entre otras cosas.</p>
+
+							<p>Conociendo nuestras intenciones entonces vamos a revisar nuestro proyecto, el cual es un crud basico con 2 modelos. Este CRUD puede ser accesado por el momento por cualquier usuario.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/10/17.jpg" width="80%">
+							</div>
+							<br>
+							<p>Lo que vamos a hacer es utilizar las gemas <b style="color: blue">"devise"</b> y <b style="color: blue">"devise_ldap_authenticatable"</b>, la primera se van a encargar del proceso de authentificación automatico con usuarios de nuestra base de datos, mientras que la segunda gema nos permite realizar esa misma autentificación pero incluyendo los usuarios de nuestro active directory. Podemos incluso hacer que la autentificación solo la realice con usuarios de nuestro active directory, pero de igual manera necesitamos ambas gemas instaladas. El proceso de instalación es el siguiente:</p>
+
+							<p>Primero agregamos las gemas a nuestro GemFile y ejecutamos el comando <b style="color: blue">"bundle install"</b> para incluirlas en nuestro proyecto.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/10/18.jpg" width="50%">
+							</div>
+							<br>
+							<p>Ahora ejecutamos los comandos: <b style="color: blue">"bundle exec rails g devise:install"</b> y <b style="color: blue">"bundle exec rails g devise_ldap_authenticatable"</b> para instalar las dependencias.</p>
+
+							<p>Ahora vamos a crear el modelo de usuario con: <b style="color: blue">"bundle exec rails g devise User".</b>
+
+							<p>Ese comando va a crearnos un nuevo archivo "app/models/user.rb" el cual tenemos que configurar de la siguiente manera. Notese que estamos implementando nuestra gema ldap_authenticatable en el modelo.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/10/19.jpg" width="80%">
+							</div>
+							<br>
+							<p>Lo que sigue es modificar tambien nuestra migracion del usuario que se se encuentra en "db/migrate/xxxxxxx_devise_create_users.rb" como aparece en la siguiente imagen. La intención es generar como identificador el nombre de usuario en lugar del correo electronico que viene por defecto.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/10/20.jpg" width="80%">
+							</div>
+							<br>
+							<p>Ahora corremos la migracion con <b style="color: blue">"bundle exec rails db:migrate"</b> para crear las tablas de la base de datos.</p>
+
+							<p>Ahora vamos a configurar el archivo "config/initializers/devise.rb" para nuestra conexion por LDAP.
+							Lo que vamos a hacer es colocar los siguientes campos con esos valores para establecer la conexión.</p>
+
+							<div class="text-center">
+							<p>config.ldap_logger = true</p>
+							<p>config.ldap_create_user = true</p>
+							<p>config.ldap_update_password = false</p>
+							<p>config.ldap_use_admin_to_bind = true</p>
+							<p>config.authentication_keys = [:username]</p>
+							<p>config.case_insensitive_keys = [:username]</p>
+							<p>config.strip_whitespace_keys = [:username]</p>
+
+							<p>Ahora en el archivo "config/ladp.yml" debemos poner nuestras credenciales en el apartado de desarrollo o development. Dada la configuración previa de windows server, mi configuración quedó de la siguiente manera.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/10/21.jpg" width="50%">
+							</div>
+							<br>
+							<p>Ya que tenemos la configuración de ldpa vamos a generar las vistas de nuestros formularios de login con: <b style="color: blue">"bundle exec rails g devise:views users -v sessions"</b>.Podemos tambien instalar y usar bootstrap, pero nuestro formulario es basicó y quedo así.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/10/22.jpg" width="50%">
+							</div>
+							<br>
+							<p>Lo que sigue es generar el controlador para la sesión con : <b style="color:blue">"bundle exec rails g devise:controllers users -c=sessions"</b>. Esto nos va a generar un archivo en "app/controllers/users/sessions_controller.rb" y debemos djarlo como en la siguiente imagen:</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/10/23.jpg" width="50%">
+							</div>
+							<br>
+							<p>Por ultimo tenemos que considerar las rutas que vamos a seguir con nuestro inicio de sesión y el crud que ya teniamos modificando el archivo "config/routes.rb" como en la siguiente imagen.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/10/24.jpg" width="50%">
+							</div>
+							<br>
+							<p>Ademas de lo que ya vimos, podemos optar por crear una pagina de inicio o algo por el estilo, pero eso ya seria cuestion de gustos. Basicmente con lo que hemos conigurado es suficiente.</p>
+
+							<p>Si probamos nuestro CRUD nos damos cuenta de que necesitamos tener la sesion iniciada, para poder entrar siquiera al index. Por lo que nos redirige al login que hicimos.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/10/25.jpg" width="50%">
+							</div>
+							<br>
+							<p>Si colocamos las credenciales de alguno de nuestros usuarios del grupo entonces vamos a poder iniciar sesión.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/10/26.jpg" width="50%">
+							</div>
+							<br>
+							<p>Y ahora si, vamos a poder modificar nuestro CRUD.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/10/27.jpg" width="50%">
+							</div>
+							<br>
+
+							<br>
+							<div class="col-12 text-center">
+								<h4>Extras:</h4>
+							</div>
+							<br>
+							<p>El proyecto de django se puede descargar directamente <a href="resources/crud_django.rar" download="crud_django.rar" style="color:blue">aquí</a></p>
+							<p>Y el proyecto de rails <a href="resources/crud_rails.rar" download="crud_rails.rar" style="color:blue">aquí.</a></p>
+							<p>Los proyectos ya incluyen las actualizaciones para que funcionen. Solo es necesario adaptar las credenciales del servicio LDAP.</p>
+
+						</div>
 						</div>
 
 						<!-- /blog post -->
