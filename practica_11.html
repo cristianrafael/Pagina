@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Practica 11</title>
+
+		<!-- Google font -->
+		<link href="https://fonts.googleapis.com/css?family=Lato:700%7CMontserrat:400,600" rel="stylesheet">
+
+		<!-- Bootstrap -->
+		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+
+		<!-- Font Awesome Icon -->
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+
+		<!-- Custom stlylesheet -->
+		<link type="text/css" rel="stylesheet" href="css/style.css"/>
+
+    </head>
+	<body>
+
+		<!-- Header -->
+		<header id="header">
+			<div class="container">
+
+				<div class="navbar-header">
+					<!-- Logo -->
+					<div class="navbar-brand">
+						<a class="logo" href="index.html">
+							<img src="./img/logo.png" alt="logo">
+						</a>
+					</div>
+					<!-- /Logo -->
+
+					<!-- Mobile toggle -->
+					<button class="navbar-toggle">
+						<span></span>
+					</button>
+					<!-- /Mobile toggle -->
+				</div>
+
+				<!-- Navigation -->
+				<nav id="nav">
+					<ul class="main-menu nav navbar-nav navbar-right">
+						<li><a href="practicas.html">Practicas</a></li>
+						<li><a href="acercade.html">Acerca de</a></li>
+						<li><a href="contact.html">Contacto</a></li>
+					</ul>
+				</nav>
+				<!-- /Navigation -->
+
+			</div>
+		</header>
+		<!-- /Header -->
+
+		<!-- Hero-area -->
+		<div class="hero-area section">
+
+			<!-- Backgound Image -->
+			<div class="bg-image bg-parallax overlay" style="background-image:url(./img/practica_11.png)"></div>
+			<!-- /Backgound Image -->
+
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10 col-md-offset-1 text-center">
+						<ul class="hero-area-tree">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="practicas.html">Practicas</a></li>
+							<li>Instalar linux server y configurar 10 usuarios y 4 grupos</li>
+						</ul>
+						<h1 class="white-text">Instalar linux server y configurar 10 usuarios y 4 grupos</h1>
+						<ul class="blog-post-meta">
+							<li class="blog-meta-author">25 de abril 2020</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!-- /Hero-area -->
+
+		<!-- Blog -->
+		<div id="blog" class="section">
+
+			<!-- container -->
+			<div class="container">
+
+				<!-- row -->
+				<div class="row">
+
+					<!-- main blog -->
+					<div id="main" class="col-md-12">
+
+						<!-- blog post -->
+						<div class="blog-post">
+							<div class="col-12 text-center">
+								<h4>Instalación Ubuntu Server</h4>
+							</div>
+							<br>
+							<p>Como sistema operativo linux para servidores, vamos a instalar Ubuntu Server. El link para descargar el ISO podemos descargarlo <a href="https://ubuntu.com/download/server" target="_blank" style="color: blue">aquí.</a> Y para montar la imagen ISO en nuestra memoria utilizamos <a target="_blank" style="color:blue" href="https://rufus.ie/">Rufus</a>, que ya lo habiamos utilizado en practicas anteriores. Dicho esto, procedemos con la instalación.</p>
+							
+							<p>Al arrancar la instalación desde la USB, el asistente nos pedirá seleccionar el idioma para instalar los paquetes necesarios, aunque muchas de las palabras se mantengan en ingles.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/11/1.jpg" width="50%">
+							</div>
+							<br>
+							<p>Lo siguiente es seleccionar la distribución del teclado, así que para que reconozca la ñ y los caracteres del español seleccionamos latinoamericano, o podemos detectar la distribución automaticamente.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/11/2.jpg" width="50%">
+							</div>
+							<br>
+							<p>Luego, vamos a poder configurar nuestra interfaz de red. Este paso es muy importante puesto que si nuestra computadora no cuenta con un puerto ethernet (Aunque basicamente no se recomienda usar una laptop para un servidor) podemos incluso utilizar la conexion inalambrica. Solo es necesario obtner una ip por medio de DHC dentro de las opciones que vienen aquí.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/11/3.jpg" width="50%">
+							</div>
+							<br>
+							<p>Si tenemos una dirección proxy podemos agregarla en este espacio. Pero por el momento no es necesario.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/11/4.jpg" width="50%">
+							</div>
+							<br>
+							<p>El siguiente paso es seleccionar una ruta que servirá como repositorio espejo, pero podemos seleccionar la que viene por defecto.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/11/5.jpg" width="50%">
+							</div>
+							<br>
+							<p>Ahora viene la parte interesante, la de las particiónes. En mi caso tengo planeado usar el disco duro completo, así que no tendré que preocuparme por las particiones.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/11/6.jpg" width="50%">
+							</div>
+							<br>
+							<p>Si elegimos esta opción en el menu, nos aparecerá la etiqueta de nuestro disco duro.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/11/7.jpg" width="50%">
+							</div>
+							<br>
+							<p>Por default, se van a crear dos particiones. La primera se hará al principio del disco y será la encargada de arrancar el sistema operativo. Mientras que la segunda sera para instalar lo demas, a demas de ser utilizado para guardar nuestros archivos personales.</p>
+							<p>Si queremos hacer particiones adicionales tendremos que reiniciar las particiones y hacer cada una manualmente.</p>
+							<p>Como nuestro sistema operativo esta orientado a funcionar como servidor, se recomienda no hacer uso excesivo de los recursos del sistema por lo que se considera que no es necesario realizar una particion swap, pero de igual forma podemos crearla si así lo queremos.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/11/8.jpg" width="50%">
+							</div>
+							<br>
+							<p>Lo que sigue es ponerle un nombre a nuestro servidor, tambien vamos a crear un usuario con su contraseña para empezar a trabajar.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/11/9.jpg" width="50%">
+							</div>
+							<br>
+							<p>En el siguiente paso nos da la opción de instalar openSSH para hacer nuestras conexiones seguras, pero por el momento no lo necesitamos.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/11/10.jpg" width="50%">
+							</div>
+							<br>
+							<p>Despues nos aparecerá una lista de paqueterias opcionales que podemos descargar e incluir en la instalacón, esto ya depende del uso que queramos darle al servidor, pero para esta practica no es necesario instalar algo mas.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/11/11.jpg" width="50%">
+							</div>
+							<br>
+							<p>Cuando tengamos todo listo, entonces empezará ahora si con la instalación. Cabe mencionar que es posible que descargue actualizaciones si tenemos configurada nuestra interfaz de red, por lo que tardara un poco en finalizar.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/11/12.jpg" width="50%">
+							</div>
+							<br>
+							<p>Al reiniciar, el servidor nos mostrara la consola para iniciar sesión y empezar a trabajar en el.</p>
+							<p>Para sacar las capturas de pantalla y trabajar mas rapidamente vamos a instalar la interfaz grafica (aunque no se recomienda hacerlo). Para esto simpelmente tecleamos una secuencia de comandos, primero actualizamos con: <b style="color: blue">"sudo apt update && sudo apt upgrade"</b>.</p>
+							<p>Despues instalamos la herramienta tasksel con: <b style="color: blue">"sudo apt install tasksel"</b></p>
+							<p>Y cuando se descargue la ejecutamos con: <b style="color: blue">"sudo tasksel"</b>. Luego nos aparecera una lista de posibles paquetes a instalar, si seleccionamos Ubuntu Desktop y le damos ok, se instalará nuestra interfaz grafica.</p>
+
+							<br>
+							<div class="col-12 text-center">
+								<h4>Creación de usuarios y grupos</h4>
+							</div>
+							<br>
+							<p>Ahora vamos a ver como podemos crear usuarios y grupos desde la terminal. Tambien podemos hacerlo instalando una herramienta de gnome pero vamos a hacerlo de la manera original.</p>
+							<p>Los usuarios y grupos que vamos a crear seran los mismos que en la practica de windows server, en la siguiente imagen se muestra los grupos y los usuarios que pertenecen a cada uno.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/9/3_1.jpg" width="30%">
+							</div>
+							<br>
+							<p>Para que sea mas practica la creacion de estas entidades, primero vamos a crear nuestros grupos y luego añadimos los usuarios.</p>
+							<p>Para crear un grupo escribimos: <b style="color: blue">"sudo groupadd [nombre de nuestro grupo]"</b></p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/11/13.png" width="70%">
+							</div>
+							<br>
+							<p>Ahora que tenemos nuestros grupos creados vamos a crear ahora si, a nuestros 10 usuarios.</p>
+							<p>Para eso utilizamos el comando <b style="color: blue">"sudo useradd [opciones] [nombre de nuestro usuario]"</b>. Es necesario destacar las opciones con las que cuenta este comando, si añadimos "-g" al comando entonces podemos escribir el nombre de un grupo para añadirlo automaticamente. Si agregamos "-d" entonces podemos asignar el directorio que especifiquemos. Por otro lado la opcion "-m" nos crea un directorio para el usuario dentro de home. Por ultimo si agregamos la opcion "-s" entonces podemos especificar el interprete de comandos que usará el usuario. Esta ultima opcion por lo general no necesitamos modificarla puesto que por defecto trabajamos con bash.</p>
+							<p>Entonces, para crear a nuestro primer usuario seria: <b>"sudo useradd -m -g Recursos_Humanos Sandra"</b>. Un buen punto a remarcar es que si que no podemos usar espacios en nuestros nombres.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/11/14.png" width="70%">
+							</div>
+							<br>
+							<p>Para generarles una contraseña usamos el comando: <b style="color: blue">"sudo passwd [nombre de nuestro usuario]"</b>.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/11/15.png" width="70%">
+							</div>
+							<br>
+							<p>Si revisamos nuestro archivo "/etc/passwd" podemos notar que nuestros usuarios ya estan almacenados y añadidos a su respectivo grupo".</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/11/16.png" width="70%">
+							</div>
+							<br>
+							<p>Si revisamos tambien el archivo "/etc/group" vamos a ver los grupos que se crearon. Con esto ya tenemos nuestros usuarios con sus grupos.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/11/17.png" width="70%">
+							</div>
+							<br>
+						</div>
+
+						<!-- /blog post -->
+
+
+					</div>
+					<!-- /main blog -->
+
+				</div>
+				<!-- row -->
+
+			</div>
+			<!-- container -->
+
+		</div>
+		<!-- /Blog -->
+
+		<!-- Footer -->
+		<footer id="footer" class="section">
+
+			<!-- container -->
+			<div class="container">
+
+				<!-- row -->
+				<div class="row">
+
+					<!-- footer logo -->
+					<div class="col-md-6">
+						<div class="footer-logo">
+							<a class="logo" href="index.html">
+								<img src="./img/logo.png" alt="logo">
+							</a>
+						</div>
+					</div>
+					<!-- footer logo -->
+
+					<!-- footer nav -->
+					<div class="col-md-6">
+						<ul class="footer-nav">
+							<li><a href="practicas.html">Practicas</a></li>
+							<li><a href="acercade.html">Acerca de</a></li>
+							<li><a href="contact.html">Contacto</a></li>
+						</ul>
+					</div>
+					<!-- /footer nav -->
+
+				</div>
+				<!-- /row -->
+
+				<!-- row -->
+				<div id="bottom-footer" class="row">
+
+					<!-- social -->
+					<div class="col-md-4 col-md-push-8">
+						<ul class="footer-social">
+							<li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a></li>
+							<li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li>
+							<li><a href="#" class="youtube"><i class="fa fa-youtube"></i></a></li>
+							<li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+						</ul>
+					</div>
+					<!-- /social -->
+
+					<!-- copyright -->
+					<div class="col-md-8 col-md-pull-4">
+						<div class="footer-copyright">
+							<span>&copy; Copyright 2020. Esta pagina fue creada solo con fines educativos</a></span>
+						</div>
+					</div>
+					<!-- /copyright -->
+
+				</div>
+				<!-- row -->
+
+			</div>
+			<!-- /container -->
+
+		</footer>
+		<!-- /Footer -->
+
+		<!-- preloader -->
+		<div id='preloader'><div class='preloader'></div></div>
+		<!-- /preloader -->
+
+
+		<!-- jQuery Plugins -->
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+
+	</body>
+</html>
