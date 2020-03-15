@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Practica 12</title>
+
+		<!-- Google font -->
+		<link href="https://fonts.googleapis.com/css?family=Lato:700%7CMontserrat:400,600" rel="stylesheet">
+
+		<!-- Bootstrap -->
+		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+
+		<!-- Font Awesome Icon -->
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+
+		<!-- Custom stlylesheet -->
+		<link type="text/css" rel="stylesheet" href="css/style.css"/>
+
+    </head>
+	<body>
+
+		<!-- Header -->
+		<header id="header">
+			<div class="container">
+
+				<div class="navbar-header">
+					<!-- Logo -->
+					<div class="navbar-brand">
+						<a class="logo" href="index.html">
+							<img src="./img/logo.png" alt="logo">
+						</a>
+					</div>
+					<!-- /Logo -->
+
+					<!-- Mobile toggle -->
+					<button class="navbar-toggle">
+						<span></span>
+					</button>
+					<!-- /Mobile toggle -->
+				</div>
+
+				<!-- Navigation -->
+				<nav id="nav">
+					<ul class="main-menu nav navbar-nav navbar-right">
+						<li><a href="practicas.html">Practicas</a></li>
+						<li><a href="acercade.html">Acerca de</a></li>
+						<li><a href="contact.html">Contacto</a></li>
+					</ul>
+				</nav>
+				<!-- /Navigation -->
+
+			</div>
+		</header>
+		<!-- /Header -->
+
+		<!-- Hero-area -->
+		<div class="hero-area section">
+
+			<!-- Backgound Image -->
+			<div class="bg-image bg-parallax overlay" style="background-image:url(./img/practica_10.jpg)"></div>
+			<!-- /Backgound Image -->
+
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10 col-md-offset-1 text-center">
+						<ul class="hero-area-tree">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="practicas.html">Practicas</a></li>
+							<li>Permisos de usuarios/grupos Django y Rails en Ubuntu Server</li>
+						</ul>
+						<h1 class="white-text">Permisos de usuarios/grupos Django y Rails en Ubuntu Server</h1>
+						<ul class="blog-post-meta">
+							<li class="blog-meta-author">9 de Mayo 2020</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!-- /Hero-area -->
+
+		<!-- Blog -->
+		<div id="blog" class="section">
+
+			<!-- container -->
+			<div class="container">
+
+				<!-- row -->
+				<div class="row">
+
+					<!-- main blog -->
+					<div id="main" class="col-md-12">
+
+						<!-- blog post -->
+						<div class="blog-post">
+							<p>Ya hemos visto como es que podemos configurar los permisos de usuarios y grupos en Windows Server, sin embargo cuando hablamos de servidores, la mayoria de ellos utilizan un sistema linux que nos permita administrar mas a fondo las configuraciónes que necesitamos para trabajar en nuestro equipo.</p>
+							<p>A pesar de que Windows posee multiples herramientas para configurar diferentes servicios, la verdad es que los asistentes y la interfaz grafica requiere de un mayor consumo de recursos, sin mencionar el costo de la licencia, creemos que Linux es una mejor opción. Es por esto que es primordial que conozcamos como modificar los permisos que tienen los usuarios, como ejemplo vamos a utilizar los proyectos con los que trabajamos en practicas pasadas.</p>
+							<p>La instalación de django y rails se realiza de la misma forma que vimos en practicas pasadas con linux, convenientemente hemos trabajado con Ubuntu, así que no tendremos problemas con los repositorios ni con los comandos porque practicamente son los mismos.</p>
+
+							<p>Dado que en windows los permisos los establecimos a través del active directory, los usuarios tenian que usar sus credenciales corporativas para todas sus aplicaciones, incluso para utilizar nuestros sistemas. Pero la cosa cambia en linux, pues lo primero que debemos entender es como se manejan los permisos.</p>
+							<p>Para empezar no es recomendado que los usarios inicien sesión en el servidor, pero si lo llegarán a hacer es importante proteger la información que tengamos almacenada y que ciertos usuarios ni siquiera deberian poder leerla.<p>
+
+							<p>Si utilizamos el comando "ls -s" nos va a desplegar los archivos que se encuentren en el directorio donde nos encontremos, en mi caso me encuentro en el escritorio con las dos carpetas de los proyectos. Si nos fijamos bien nos aparecerá una serie de letras que nos indican los permisos que tienen los directorios.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/12/1.png" width="50%">
+							</div>
+							<br>
+							<p>Basicamente tenemos 3 secciones, la primera es sobre el dueño, la segunda es el grupo al que pertenece y la tercera son los demas usuarios, mientras que  el primer elemento nos indica si es un directorio, un enlace o un archivo.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/12/2.png" width="30%">
+							</div>
+							<br>
+							<p>Los permisos que otorga cada bandera son los siguientes, y debemos aprendernos el valor en octal para utilizar los comandos mas adelante.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/12/3.jpg" width="30%">
+							</div>
+							<br>
+							<p>Bien, ahora que sabemos lo que significa cada simbolo, tenemos que tener en cuenta sobre quien será el dueño, a que grupo va a pertenecer y que permisos tendran.</p>
+							<p>Para empezar, si recordamos la practica pasada creamos 4 grupos y 10 usuarios, yo por ejemplo tengo a mi grupo llamado Sistemas, y mi intención es que ese grupo puedan leer y ejectuar, mientras que todos los demas no tengan permisos de hacer nada.</p>
+							<br>
+							<p>Utilizando el comando <b style="color:blue">chown</b> podemos establecer el dueño de la carpeta, mi usuario llamado cristian será el dueño de ella.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/12/4.png" width="50%">
+							</div>
+							<br>
+							<p>Ahora, para cambiar el grupo al cual pertenece, utilizamos el comando <b style="color: blue">chgrp</b>, y como le mencione hace unos instantes, mi grupo Sistemas será el dueño.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/12/5.png" width="50%">
+							</div>
+							<br>
+							<p>Finalmente, vamos a ajustar los permisos a los proyectos con el comando <b style="color: blue">chmod</b>, notese que en la imagen siguiente utilizo el parametro -R para indicar recursividad en la carpeta, en otras palabras agregamos los mismos permisos a los archivos y carpetas internas a demas de la principal.</p>
+							<div class="col-12 text-center">
+								<img src="img/12/6.png" width="50%">
+							</div>
+							<br>
+							<p>Finalmente, si iniciamos sesión con otro usuario, este no podra acceder al directorio, ya que no es el dueño de la carpeta y tampoco esta dentro del grupo.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/12/7.png" width="50%">
+							</div>
+							<br>
+							<p>En conclusión los permisos de usuario en linux son un poco mas complejos que en windows, si bien es cierto que el active directory tiene sus ventajas sobre la misma cuenta para diferentes aplicaciones, en linux es un poco distinto.</p>
+
+						</div>
+
+						<!-- /blog post -->
+
+
+					</div>
+					<!-- /main blog -->
+
+				</div>
+				<!-- row -->
+
+			</div>
+			<!-- container -->
+
+		</div>
+		<!-- /Blog -->
+
+		<!-- Footer -->
+		<footer id="footer" class="section">
+
+			<!-- container -->
+			<div class="container">
+
+				<!-- row -->
+				<div class="row">
+
+					<!-- footer logo -->
+					<div class="col-md-6">
+						<div class="footer-logo">
+							<a class="logo" href="index.html">
+								<img src="./img/logo.png" alt="logo">
+							</a>
+						</div>
+					</div>
+					<!-- footer logo -->
+
+					<!-- footer nav -->
+					<div class="col-md-6">
+						<ul class="footer-nav">
+							<li><a href="practicas.html">Practicas</a></li>
+							<li><a href="acercade.html">Acerca de</a></li>
+							<li><a href="contact.html">Contacto</a></li>
+						</ul>
+					</div>
+					<!-- /footer nav -->
+
+				</div>
+				<!-- /row -->
+
+				<!-- row -->
+				<div id="bottom-footer" class="row">
+
+					<!-- social -->
+					<div class="col-md-4 col-md-push-8">
+						<ul class="footer-social">
+							<li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a></li>
+							<li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li>
+							<li><a href="#" class="youtube"><i class="fa fa-youtube"></i></a></li>
+							<li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+						</ul>
+					</div>
+					<!-- /social -->
+
+					<!-- copyright -->
+					<div class="col-md-8 col-md-pull-4">
+						<div class="footer-copyright">
+							<span>&copy; Copyright 2020. Esta pagina fue creada solo con fines educativos</a></span>
+						</div>
+					</div>
+					<!-- /copyright -->
+
+				</div>
+				<!-- row -->
+
+			</div>
+			<!-- /container -->
+
+		</footer>
+		<!-- /Footer -->
+
+		<!-- preloader -->
+		<div id='preloader'><div class='preloader'></div></div>
+		<!-- /preloader -->
+
+
+		<!-- jQuery Plugins -->
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+
+	</body>
+</html>
