@@ -95,11 +95,86 @@
 
 						<!-- blog post -->
 						<div class="blog-post">
+							<p>Para un servidor, el compartir archivos puede ser algo indispensable, y cuando se trata de trabajar en una red local siempre es necesario tener a la mano un directorio remoto para almacenar archivos que necesitemos compartir con otras personas. Es por eso que samba se convierte en un servicio que si o si debe estar en nuestro servidor.</p>
+							<p>A pesar de que podemos optar por ofrecer un servicio de FTP samba puede inclusive compartir impresoras en nuestro espacio de trabajo.</p>
+							<p>Instalar samba es un proceso muy sencillo, ya que los paquetes necesarios se encuentran en los repositorios oficiales, por lo que no necesitamo actualizar nada. Basta con teclear el comando sudo <b style="color: blue">"apt install samba"</b></p>
+							<br>
 							<div class="col-12 text-center">
-								<h4>Antes de empezar</h4>
+								<img src="img/13/1.png" width="50%">
 							</div>
+							<br>
+							<p>Despues de realizar la instalación, vamos a revisar el archivo de configuración que se encuentra en "/etc/samba/smb.conf" para ver como esta estructurado.</p>
 							
-						</div>
+							<p>El archivo de configuración se divide en secciones que son <b style="color: blue">[global]</b>, <b style="color: blue">[homes]</b> y <b style="color: blue">[printers]</b> </p>
+							<p>La sección principal es la sección <b style="color: blue">[global]</b> que nos permite configurar los parámetros generales del servicio. </p>
+							<p>La sección <b style="color: blue">[homes]</b> nos permitirá compartir las carpetas home de cada usuario, para que cada usuario pueda acceder a su carpeta home por la red.</p>
+							<p>La sección <b style="color: blue">[printers]</b> nos permitirá compartir impresoras.</p>
+
+							<p>Como ya hemos creado nuestros usuarios en las practicas pasadas, lo que vamos a hacer es crear una carpeta compartida donde tendran acceso todos ellos.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/13/2.png" width="50%">
+							</div>
+							<br>
+							<p>Dentro de las parametros que especificamos, "browseable" sirve para que puedan navegar entre las carpetas internas, el parametro "create mask" que serán los permisos que tendran los archivos creados. Por otro lado, como no queremos invitados colocamos el parametro "guest ok" en no.</p>
+							<p>La carpeta que vamos a compartir se especifica en el parametro "path". Como la carpeta estará expuesta, es recomendable colocar la carpeta dentro de srv que hace referencia a los archivos destinados del servidor, aunque no pasa nada si no lo hacemos.</p>
+													
+							<p>Para recargar la configuracion utilizamos el comando <b style="color: blue">"sudo systemctl restart smbd.service"</b>.</p>
+
+							<p>Aunque ya tengamos a nuestros usuarios creados en el sistema, samba necesita que agreguemos a los usuarios a su propio archivo de usuarios, por lo que utilizaremos el siguiente comando:</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/13/3.png" width="50%">
+							</div>
+							<br>
+
+							<p>Ya tenemos todo, solo nos falta crear la carpeta con mkdir en la ruta espeficicada, ademas de asignarle los permisos necesarios.</p>
+							<p style="font-style: italic;color: red">OJO: Algo que debemos tomar en cuenta es que los permisos que establezcamos en el archivo de configuración "smbd.conf" no van a sobreescribir a los permisos del sistema, es decir, si en samba colocamos que la carpeta puede ser modificada, pero la carpeta no tiene los mismos permisos en el sistema, entonces no podremos escribir en ella.</p>
+							<p style="font-style: italic;color: red">Por otro lado, podriamos optar por otorgarle todos los permisos a la carpeta desde el sistema, y crear multiples recursos en samba que hagan referencia a la misma carpeta pero con diferentes permisos por si queremos que solo unos usuarios puedan hacer ciertas cosas.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/13/7.png" width="50%">
+							</div>
+							<br>
+
+							<div class="col-12 text-center">
+								<h4>Vamonos a Windows</h4>
+							</div>
+
+							<p>Si utilizamos windows 10, tenemos de hacer este paso primero. Debemos de abrir la herramienta caracteristicas de windows, y marcar la compatibilidad con el protocolo SMB. Posteriormente necesitamos reiniciar el equipo.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/13/4.png" width="50%">
+							</div>
+							<br>
+
+							<p>Como ya tenemos el servicio de samba instalado y esuchando en el servidor de ubuntu server, debemos conectarnos a la misma red local para asegurar la conexión, si nos conectamos a otra red podemos acceder al recurso colocando el nombre del dominio/ip del servidor, en mi caso coloqué la ip privada de mi servidor, y conecté mi PC con windows 10 a la misma red.</p>
+							<p>Si observamos bien, despues de la ip debemos especificar el recurso al cual queremos acceder, nosotros lo llamamos samba. No olvidemos que debemos marcar la opción de conectar con otras credenciales para que nos deje acceder.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/13/5.png" width="50%">
+							</div>
+							<br>
+							<p>Colocamos las credenciales del usuario que registramos en samba. No confundir con los usuarios del sistema de ubuntu.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/13/6.png" width="30%">
+							</div>
+							<br>
+							<p>Si realizamos las configuraciones adecuadas, entonces podremos acceder al recurso. En mi caso realice la prueba creando un archivo de prueba.</p>
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/13/8.png" width="60%">
+							</div>
+							<br>
+
+							<p>Al regresar al servidor podemos ver el archivo que creamos y comprobar la funcionalidad del servicio.</p>
+
+							<br>
+							<div class="col-12 text-center">
+								<img src="img/13/9.png" width="50%">
+							</div>
+							<br>
 						</div>
 
 						<!-- /blog post -->
